@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 14) - Tử Tế</title>
+    <style>
+        /* Thiết lập nền vũ trụ ánh sáng (Celestial Aurora) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            /* Nền không gian sâu thẳm hòa quyện ánh sáng tâm linh */
+            background: radial-gradient(circle at 50% 0%, #11142e 0%, #070914 70%, #020307 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Tạo các dải cực quang và luồng sáng ấm áp chuyển động chậm */
+        body::before, body::after {
+            content: "";
+            position: fixed;
+            width: 300vw;
+            height: 300vh;
+            top: -100vh;
+            left: -100vw;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Dải sáng vàng hổ phách và hồng cam tượng trưng cho lòng tử tế ấm áp */
+        body::before {
+            background: radial-gradient(circle at 30% 40%, rgba(241, 196, 15, 0.06) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 70%, rgba(230, 126, 34, 0.04) 0%, transparent 45%),
+                        radial-gradient(circle at 50% 30%, rgba(52, 152, 219, 0.06) 0%, transparent 50%);
+            animation: celestialSlow 60s linear infinite;
+        }
+
+        /* Tầng sao lấp lánh nhẹ nhàng phía xa */
+        body::after {
+            background-image: 
+                radial-gradient(1.5px 1.5px at 40px 80px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 120px 200px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 280px 120px, #ffd54f, rgba(0,0,0,0)), /* Sao ấm */
+                radial-gradient(1.5px 1.5px at 350px 320px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 480px 190px, rgba(255,255,255,0.5), rgba(0,0,0,0));
+            background-size: 550px 550px;
+            animation: starFlicker 6s ease-in-out infinite alternate;
+            opacity: 0.6;
+        }
+
+        /* Tạo các hạt sáng sinh động (Hạt giống thiện lành) bay lơ lửng */
+        .light-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(3px 3px at 15% 25%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+                radial-gradient(4px 4px at 75% 45%, rgba(241, 196, 15, 0.4), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 45% 80%, rgba(255,255,255,0.7), rgba(0,0,0,0));
+            background-size: 800px 800px;
+            animation: particlesFloat 25s linear infinite;
+        }
+
+        /* Hiệu ứng chuyển động vũ trụ */
+        @keyframes celestialSlow {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        @keyframes starFlicker {
+            0%, 100% { opacity: 0.4; transform: scale(0.98); }
+            50% { opacity: 0.9; transform: scale(1.02); }
+        }
+
+        @keyframes particlesFloat {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 800px -800px; }
+        }
+
+        /* Khung nội dung Kính mờ phản chiếu ánh hoàng kim (Premium Glassmorphism) */
+        .container {
+            background: rgba(13, 16, 33, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            /* Viền vàng nhạt sang trọng */
+            border: 1px solid rgba(241, 196, 15, 0.15);
+            border-radius: 24px;
+            padding: 55px 45px;
+            max-width: 800px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8),
+                        0 0 40px rgba(241, 196, 15, 0.02);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-4px);
+            border-color: rgba(241, 196, 15, 0.35);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9),
+                        0 0 50px rgba(241, 196, 15, 0.08);
+        }
+
+        /* Thiết kế Tiêu đề */
+        h1 {
+            text-align: center;
+            color: #f1c40f; /* Màu vàng kim rực rỡ */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Thiết kế Đoạn văn */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Các khối triết lý nhấn mạnh */
+        .quote-block {
+            background: rgba(241, 196, 15, 0.04);
+            border-left: 3px solid #f1c40f;
+            padding: 15px 25px;
+            margin: 25px 0;
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            color: #fbd34d;
+        }
+
+        /* Điểm xuyết các từ khóa quan trọng bằng màu nắng ấm */
+        .highlight-warm {
+            color: #ffb74d; /* Màu cam nắng ấm áp */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(255, 183, 77, 0.2);
+        }
+
+        .highlight-gold {
+            color: #ffd54f;
+            font-weight: 600;
+        }
+
+        /* Thẻ nhấn mạnh ý nghĩa đối lập */
+        .highlight-cyan {
+            color: #4fc3f7; /* Màu xanh dịu mắt */
+            font-weight: 600;
+        }
+
+        /* Tương thích hoàn hảo trên Điện thoại di động */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 35px 20px;
+                border-radius: 18px;
+            }
+            h1 {
+                font-size: 1.8em;
+                letter-spacing: 1.5px;
+            }
+            p {
+                font-size: 1.05em;
+                line-height: 1.75;
+            }
+            .quote-block {
+                padding: 12px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="light-particles"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 14)</span>
+            TỬ TẾ
+        </h1>
+        
+        <p><span class="highlight-warm">Tử tế</span> nghĩa là sẵn lòng giúp đỡ người khác, ưa thích giúp đỡ người khác. Điều này ngược với bản năng tự nhiên của con người là ích kỷ lo cho mình trước. Người tử tế là người có khuynh hướng tự nhiên thích giúp đỡ người khác.</p>
+        
+        <p>Để thay đổi từ cái bản năng thích lo cho mình biến thành cái khuynh hướng thích lo cho người là cả quãng đường dài tu dưỡng từ nhiều kiếp trước. Mỗi người nhìn kỹ lại tâm mình sẽ thấy, trong đó chưa hề có sẵn khuynh hướng thích giúp đỡ người khác. Phải có ai kêu gọi, vận động, nhắc nhở thì ta mới khởi lên ý nghĩ giúp kẻ khốn khó trong lúc nào đó rồi thôi. Bình thường ta không bận tâm phải lo cho ai cả.</p>
+        
+        <div class="quote-block">
+            "Ta hiểu rằng, nếu ta được sống bên cạnh một người tử tế, đời ta sẽ hạnh phúc lắm. Người đó sẽ giúp đỡ khi ta cần. Người đó sẽ chở che khi ta bị ức hiếp. Người đó sẽ vui mừng khi ta thành công. Người đó sẽ an ủi khi ta thất bại, thậm chí người đó sẽ không ghét ta khi ta lầm lỗi. Nếu quanh ta có nhiều người tử tế, đời ta hạnh phúc biết bao."
+        </div>
+        
+        <p>Suy nghĩ vậy là đúng rồi. Nhưng ta phải suy nghĩ thêm. Vậy ta có cần phải sống tử tế với mọi người như thế không? Ta sẽ làm gì để mọi người sống trên đời đều tử tế với nhau?</p>
+        
+        <p>Ta cần người khác tử tế với ta, thì họ cũng cần ta tử tế với họ mà. Hai ba người tử tế với nhau cũng chưa đủ để thế gian này hạnh phúc. <span class="highlight-gold">Trước hết chính ta phải là người sống tử tế với mọi người cái đã.</span> Sau đó, từ cuộc sống tử tế chân thật có bề dày của mình, ta kêu gọi mọi người hãy sống tử tế với nhau.</p>
+        
+        <p>Ta tự nói với mình rằng hãy sống tử tế, hãy thích giúp đỡ người khác. Ta cầu xin vị thần thánh mà ta tôn thờ hãy truyền cho ta khuynh hướng tử tế để ta ưa thích giúp đỡ người khác. Ta hay ngợi khen ngưỡng mộ những người biết sống tử tế, để <span class="highlight-warm">luật Nhân quả</span> xây dựng khuynh hướng tử tế trong lòng ta.</p>
+        
+        <p>Thế giới này là môi trường sống lẫn lộn giữa người tốt và người xấu. Thế giới này là cơ hội để ta chiến đấu giữa cái ác và cái thiện trong lòng mình, sau đó ta sẽ đi về thế giới được phân loại. Nếu trong lòng ta điều Thiện chiếm chỗ, thì sau khi chết ta sẽ sinh về nơi toàn những người thánh thiện vui sống. Nếu trong lòng ta điều ác chiếm chỗ, thì sau khi chết ta sẽ sinh về nơi toàn những người xấu ác đang sống đọa đày. <span class="highlight-cyan">Vũ trụ vốn công bằng là thế.</span></p>
+        
+        <p>Nơi thế giới thiện và ác lẫn lộn này, nếu ta khẳng định lập trường với nẻo thiện, ta đã vượt qua cuộc đại tuyển sinh của trời đất. Ta được chọn đưa về thế giới thánh thiện. Nơi thế giới thiện và ác lẫn lộn này, nếu ta thuyết phục được thêm nhiều người đi về nẻo thiện, thì ta trở thành bậc đại uy đức, dạo chơi tự do qua các cõi thiên thần.</p>
+        
+        <p>Ban đầu, mới sống tử tế, mới cố gắng giúp được vài người, ta cảm thấy rất cực khổ vất vả. Lâu ngày quen sống tử tế với mọi người, ta chợt nhận ra rằng <span class="highlight-warm">tử tế với người khác lại chính là niềm hạnh phúc của ta.</span> Dù sống tử tế khiến ta hao tốn thời gian, công sức, tiền của, tâm trí. Nhưng bù lại, khi sống tử tế, khi giúp đỡ được cho người khác, khi làm cho người khác yên vui, ta đã có được niềm vui rồi. Ngộ ra được điều này, ta sẽ mãi mãi làm người sống tử tế, luôn thích giúp đỡ người khác. Và nhất là sẽ kêu gọi mọi người cùng sống tử tế với nhau.</p>
+    </div>
+
+</body>
+</html>

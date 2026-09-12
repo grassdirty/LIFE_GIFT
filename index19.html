@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 19) - Tiết Kiệm</title>
+    <style>
+        /* Nền không gian màu Đất Mẹ và ánh sáng Mùa Vàng */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 40%, #3e2723 0%, #1f100a 60%, #0d0603 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Lớp ánh sáng vàng ngầm chiếu rọi */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150vw;
+            height: 150vh;
+            z-index: -2;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 193, 7, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Hiệu ứng "Hạt ngọc trời" (Golden Grains) bay lơ lửng */
+        .golden-grains {
+            position: fixed;
+            top: -10vh;
+            left: 0;
+            width: 100%;
+            height: 120vh;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(3px 2px at 20% 10%, #ffc107, rgba(0,0,0,0)),
+                radial-gradient(2px 3px at 70% 30%, #ffb300, rgba(0,0,0,0)),
+                radial-gradient(4px 2px at 40% 60%, rgba(255, 235, 59, 0.8), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 80%, #ffd54f, rgba(0,0,0,0)),
+                radial-gradient(3px 4px at 10% 90%, #ffca28, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 60% 40%, rgba(255, 193, 7, 0.6), rgba(0,0,0,0));
+            background-size: 800px 800px;
+            animation: floatingGrains 25s linear infinite;
+        }
+
+        @keyframes floatingGrains {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(100vh) rotate(15deg); opacity: 0.3; }
+        }
+
+        /* Hộp nội dung Glassmorphism phong cách mộc mạc, sang trọng */
+        .container {
+            background: rgba(30, 20, 15, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 193, 7, 0.15);
+            border-radius: 20px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9),
+                        0 0 50px rgba(255, 193, 7, 0.05) inset;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 193, 7, 0.35);
+            box-shadow: 0 40px 90px rgba(0, 0, 0, 0.95),
+                        0 0 60px rgba(255, 193, 7, 0.08) inset;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #ffc107; /* Vàng lúa chín */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #d7ccc8;
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Định dạng đoạn văn */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối Đúc kết Đạo Đức vs Ác Độc */
+        .balance-box {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.06) 0%, rgba(76, 175, 80, 0.03) 100%);
+            border-left: 4px solid #ffc107;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+        }
+        
+        .balance-box p {
+            margin-bottom: 12px;
+            font-size: 1.18em;
+        }
+
+        /* Từ khóa nổi bật */
+        .kw-gold {
+            color: #ffca28;
+            font-weight: 600;
+        }
+
+        .kw-karma {
+            color: #ff8f00; /* Cam nhân quả */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(255, 143, 0, 0.3);
+        }
+
+        .kw-recycle {
+            color: #81c784; /* Xanh lá tái chế */
+            font-weight: 600;
+        }
+        
+        .kw-evil {
+            color: #e57373; /* Đỏ nhạt ác độc/tệ bạc */
+            font-weight: 600;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; border-radius: 18px; }
+            h1 { font-size: 1.8em; letter-spacing: 1.5px; }
+            p { font-size: 1.05em; line-height: 1.75; }
+            .balance-box { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="golden-grains"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 19)</span>
+            TIẾT KIỆM
+        </h1>
+        
+        <p><span class="kw-gold">Tiết kiệm</span> nghĩa là không bỏ đi những gì vẫn còn có thể sử dụng được. Người Việt Nam có văn hóa nhặt hạt cơm rơi để ăn chứ không bỏ. Văn hóa đó dạy ta biết bao nhiêu điều quý giá. Mỗi hạt cơm đến được mâm cơm là đã đi qua nhiều chặng đường khó nhọc. Một hạt cơm thì rất ít ỏi nhỏ bé, nhưng chứa đựng nhiều công lao gắn theo đó. Ta yêu quý hạt cơm nghĩa là ta yêu quý tấm lòng và công lao gắn theo đó. Đạo đức chính là chỗ ta yêu quý được tấm lòng và công lao của người khác.</p>
+        
+        <p><span class="kw-evil">Tệ bạc</span> chính là khi ta thờ ơ trước tấm lòng và công lao của người khác. Ai cũng quý công lao của mình, ai cũng thấy quan trọng tấm lòng của mình. Ta đặt mình vào tâm người sẽ hiểu điều này, thế nên, đừng phụ bạc người, đừng làm tổn thương người, ta phải biết yêu quý tấm lòng và công lao của mọi người.</p>
+        
+        <p>Tấm lòng và công lao của người được bày tỏ trong tất cả món đồ, vật dụng, thực phẩm, tiền bạc, mà đã đến được với cuộc đời ta. Có khi ta không dùng hết, nhưng đừng dại khờ vất bỏ vì chúng vẫn còn có thể được sử dụng cho người khác, cho trường hợp khác.</p>
+        
+        <p>Người biết tiết kiệm từng chút thì sẽ được <span class="kw-karma">luật Nhân quả</span> đưa đến một cuộc đời không bị thiếu thốn. Còn người hay phí phạm, thấy thừa một chút là vất bỏ, sau này sẽ rơi vào tình trạng thiếu trước hụt sau. Nhất là những ai cứ vất thức ăn thừa vào thùng rác thì sẽ có lúc moi tìm thức ăn trong thùng rác trở lại.</p>
+        
+        <p>Người dùng tiền phí phạm sai mục đích, sẽ thiếu tiền. Người sai gia nhân thuộc hạ làm chuyện vô bổ, sẽ cô độc trơ trọi. Người đập nhà còn tốt, sau này có lúc homeless. Người uống nước không hết bỏ dở, sau này có lúc ở sa mạc hay rơi vào tình trạng khát khô vì không có nước uống. Người nóng lên đập phá đồ đạc, sau này tìm cái bàn cái ghế cái bát cái cốc không ra. Người đun củi cho lửa cháy phừng phừng không cần thiết, sau này thiếu thốn chất đốt...</p>
+        
+        <p>Ngược lại, những ai tinh tế tiết kiệm mọi thứ, thì sẽ không bị thiếu thốn. Thậm chí người nào có thể lấy rác để <span class="kw-recycle">tái chế</span>, cố gắng sử dụng lại mọi thứ đã bị vất bỏ phí phạm, có khi trở nên giàu sang dư dả. Nhìn đống rác còn chứa đựng rất nhiều thứ có thể tái sử dụng, ta hiểu sự tệ bạc của con người. Ai biết tái chế là chuộc lại lỗi lầm cho con người, vì thế người đó rất đáng quý.</p>
+        
+        <p>Tiết kiệm cũng khác với <span class="kw-evil">hà tiện</span>. Hà tiện nghĩa là không chịu đem ra sử dụng khi mà cần phải sử dụng hợp lý. Đồ đạc giấu mãi sợ xài rồi mau cũ. Tiền không chịu đưa dù biết đến lúc phải mua. Đi dự tiệc không đem quà vì sợ tốn dù biết có thể mất đi tình nghĩa. Mua thực phẩm cho con trong nhà ăn cũng không muốn chứ đừng nói đến giúp đỡ người ngoài. Người hà tiện như vậy sau này sẽ cực kỳ nghèo khổ.</p>
+        
+        <div class="balance-box">
+            <p><span class="kw-gold">Tiết kiệm là đạo đức</span>, thì <span class="kw-evil">hà tiện là ác độc</span>.</p>
+            <p><span class="kw-gold">Rộng rãi giúp đỡ là đạo đức</span>, thì <span class="kw-evil">phung phí không hợp lý là ác độc</span>.</p>
+            <p style="margin-bottom: 0; color: #d7ccc8; font-style: italic; font-size: 1.05em; margin-top: 15px;">Người có đạo đức và trí tuệ sẽ bước đi chính xác giữa tiết kiệm và rộng rãi giúp đỡ. Rất thích giúp đỡ người, nhưng cũng rất tiết kiệm.</p>
+        </div>
+    </div>
+
+</body>
+</html>

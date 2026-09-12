@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 20) - Nguyên Tắc</title>
+    <style>
+        /* Thiết lập nền Quỹ đạo Vũ trụ (Cosmic Orbits & Blueprint) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            /* Phông nền không gian tối sâu mang sắc xanh đen nguyên bản */
+            background: radial-gradient(circle at 50% 50%, #030712 0%, #0b1329 70%, #010409 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Tạo các đường lưới quỹ đạo ngầm biểu trưng cho các nguyên tắc, tuyến đường luật định */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+            background-image: 
+                linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 60%);
+            background-size: 60px 60px, 60px 60px, 100% 100%;
+            pointer-events: none;
+        }
+
+        /* Các hạt tinh tú chuyển động thẳng hàng tuần hoàn như các dòng phương tiện trật tự */
+        .cosmic-traffic {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 15% 20%, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 80% 40%, #0ea5e9, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 35% 75%, #f59e0b, rgba(0,0,0,0)), /* Điểm sáng trí tuệ vàng hổ phách */
+                radial-gradient(1px 1px at 65% 85%, #fff, rgba(0,0,0,0));
+            background-size: 500px 500px;
+            animation: trafficMove 40s linear infinite;
+        }
+
+        @keyframes trafficMove {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 500px 500px; }
+        }
+
+        /* Khung chứa nội dung tinh tế phong cách Kính mờ trật tự (Structured Glassmorphism) */
+        .container {
+            background: rgba(10, 17, 36, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            /* Đường viền sắc nét đại diện cho khuôn khổ, nguyên tắc */
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 24px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9),
+                        0 0 30px rgba(14, 165, 233, 0.02);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(245, 158, 11, 0.35); /* Chuyển màu khi hover - Nguyên tắc chuyển sang Linh hoạt */
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95),
+                        0 0 50px rgba(245, 158, 11, 0.05);
+        }
+
+        /* Thiết kế Tiêu đề */
+        h1 {
+            text-align: center;
+            color: #0ea5e9; /* Màu xanh cyan của luật pháp, trật tự hệ thống */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(14, 165, 233, 0.35);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Định dạng Văn bản paragraph */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối đúc kết / Châm ngôn tối thượng cuối bài */
+        .maxim-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(14, 165, 233, 0.02) 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .maxim-box p {
+            margin: 0;
+            color: #fef08a; /* Vàng sáng rực rỡ */
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Điểm xuyết các từ khóa phân loại */
+        .kw-law {
+            color: #38bdf8; /* Xanh luật pháp, trật tự */
+            font-weight: 600;
+        }
+
+        .kw-wisdom {
+            color: #f59e0b; /* Vàng hổ phách - Trí tuệ và Đạo đức cao */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+        }
+
+        .kw-stubborn {
+            color: #f43f5e; /* Hồng đỏ - Bệnh cố chấp, bất thiện */
+            font-weight: 600;
+        }
+
+        /* Tương thích cho thiết bị di động */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 35px 20px;
+                border-radius: 18px;
+            }
+            h1 {
+                font-size: 1.8em;
+                letter-spacing: 1.5px;
+            }
+            p {
+                font-size: 1.05em;
+                line-height: 1.75;
+            }
+            .maxim-box {
+                padding: 18px;
+            }
+            .maxim-box p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cosmic-traffic"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 20)</span>
+            NGUYÊN TẮC
+        </h1>
+        
+        <p>Nếu không có <span class="kw-law">nguyên tắc</span> buộc xe đi bên phải (có nước bên trái) thì đường sá hỗn loạn không di chuyển được, va đụng nhau liên tục. Rồi rất nhiều tình huống giao thông phức tạp khác cần phải được điều chỉnh bằng nguyên bộ luật giao thông đường bộ. Nhờ có luật giao thông mà mọi người sử dụng đường sá chung một cách hiệu quả.</p>
+        
+        <p>Trên trời cũng vậy, thấy trống không rộng rãi vậy chứ cũng phải có luật cả, có tuyến đường cả. Các máy bay phải di chuyển theo tuyến đường được cấp quyền bay chứ không thể bay tự do loạn xạ theo ý mình được. Nhờ có luật pháp, có nguyên tắc mà xã hội ổn định. Con người cứ theo luật pháp mà làm việc. Cộng đồng cứ theo nguyên tắc mà cư xử với nhau.</p>
+        
+        <p>Các bộ luật được soạn thảo rất công phu, và dĩ nhiên cũng có sai sót. Việc áp dụng luật pháp vào cuộc sống xã hội giúp mọi người sống với nhau bình an là thế. Ai cũng tuân thủ luật pháp thì mọi người cùng khỏe. Dân cũng khỏe mà chính quyền cũng khỏe.</p>
+        
+        <p>Trong cộng đồng, cơ quan, tu viện, hội đoàn... cũng có những Nguyên tắc riêng của mình, giúp cộng đồng được ổn định. Mỗi người, mỗi thành viên cứ thuộc và tuân thủ các nguyên tắc đó thì mọi việc êm ấm vô cùng.</p>
+        
+        <p>Nhưng, tuy nhiên, thiệc là khổ vì cái nhưng này. Hai việc đơn giản là Thuộc các quy tắc, và tuân thủ các quy tắc, lại chẳng đơn giản chút nào.</p>
+        
+        <p>Không ai thuộc hết các bộ luật của quốc gia mình. Luật sư cũng không thuộc nổi chứ đừng nói rất nhiều người cả đời chưa chạm tay vào sách luật. Luật sư đều phải lấy tài liệu ra nghiên cứu cả đêm khi nhận lời của khách hàng.</p>
+        
+        <p>Còn quy tắc nội bộ, có cái ngắn có cái dài, thì người thuộc người không. Bộ quy tắc ngắn quá, đơn sơ quá, thì mỗi thành viên sẽ lúng túng không biết làm gì khi gặp tình huống khó xử. Còn bộ quy tắc dài quá, tỉ mỉ quá, thì lại làm mọi người khó thuộc. Thuộc các nguyên tắc đã là rất khó.</p>
+        
+        <p><strong>Tuân thủ các nguyên tắc lại càng khó gấp bội.</strong></p>
+        
+        <p>Trên đời tạm chia làm hai hạng người. Một là hạng người muốn tuân thủ quy tắc pháp luật, hai là hạng người <em>"thích sống ngoài vòng pháp luật"</em>.</p>
+        
+        <p><span class="kw-law">Người có đạo đức thì thiên về khuynh hướng thích tuân thủ pháp luật.</span> Người xấu ác thì thiên về khuynh hướng bất tuân pháp luật.</p>
+        
+        <p>Tuân thủ pháp luật buộc ta phải từ bỏ ý thích riêng của mình, bớt đi bản ngã của mình, để làm theo ý của ai đó (ám chỉ hội đồng vạch ra các quy tắc). Ta muốn la cà nhà bạn khuya một chút, nhưng quy tắc của bố mẹ là có mặt ở nhà trước 20 giờ. Ta muốn leo hàng rào vào thăm bệnh khi bệnh viện đã đóng cổng, nhưng quy tắc của bệnh viện là khi đóng cổng thì hết giờ thăm bệnh. Ta muốn băng qua đường bất cứ chỗ nào, nhưng luật quy định ta chỉ được băng qua đường nơi có kẻ các vạch. Ta muốn điều này, quy tắc vạch ra điều khác. Nếu có đạo đức, ta kềm chế cái muốn của mình để tuân thủ quy tắc, cũng là giúp xã hội bình yên.</p>
+        
+        <p>Phải có đạo đức, phải biết kềm chế ý muốn, phải đủ bản lĩnh từ bỏ sở thích, thì ta mới tuân thủ nguyên tắc được. Đó là lý do trong xã hội không phải ai cũng đủ sức tuân thủ luật pháp, chỉ vì tự kềm chế ý muốn của mình là điều vất vả. Người tuân thủ được các điều luật, tuân thủ được các quy tắc, là người rất đạo đức.</p>
+        
+        <p>Nhưng, lại nhưng nữa, không phải lúc nào các nguyên tắc cũng đúng. Nguyên tắc giúp cho xã hội bình yên, chứ nguyên tắc không phải là sự bình yên. Xe không chạy lên lề, để giúp cho giao thông không tai nạn, nhưng có khi xe phải lách lên lề để tránh một cụ già bất ngờ ngã ra đường. Lần này, xe chạy lên lề là giúp cho xã hội tránh được tai nạn.</p>
+        
+        <p>Lên máy bay không được mang theo chất lỏng, nhưng nếu bệnh nhân này không đem theo chai thuốc dân tộc quen thuộc (chẳng có nhãn hiệu) để trợ tim thì có khi chết nửa đường giữa trời.</p>
+        
+        <p>Cô nhân viên thấy mấy em nhỏ tíu tít, để quên giấy khai sinh, chẳng có vẻ gì là khủng bố, nên cho check - in lên máy bay để về kịp chuyến, cha mẹ đang đón ở sân bay ngoài kia.</p>
+        
+        <p>Cảnh sát toan chận chiếc xe máy chở 3 lại phóng nhanh, nhưng nhìn thấy người ngồi ở giữa mặt mày tái mét, áo ấm trùm kín, mắt nhắm nghiền, nên khoác tay cho qua để kịp đến bệnh viện cấp cứu.</p>
+        
+        <p><span class="kw-wisdom">Tuân thủ nguyên tắc là đạo đức, nhưng đôi khi không tuân thủ nguyên tắc mà vẫn đạt được mục đích cuộc sống hạnh phúc bình an tử tế, thì lại là trí tuệ và đạo đức cao hơn.</span> Tuân thủ nguyên tắc quá sức sẽ trở thành <span class="kw-stubborn">bệnh cố chấp</span>. <span class="kw-stubborn">Cố chấp là một loại bất thiện.</span></p>
+        
+        <div class="maxim-box">
+            <p>Nguyên tắc giúp cho xã hội bình yên, chứ nguyên tắc không phải là sự bình yên.</p>
+        </div>
+    </div>
+
+</body>
+</html>

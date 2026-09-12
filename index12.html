@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 12) - Trung Thành</title>
+    <style>
+        /* Thiết lập nền vũ trụ động bằng CSS */
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            /* Màu nền không gian sâu thẳm */
+            background: radial-gradient(circle at 30% 30%, #160f29 0%, #0b071a 50%, #030107 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Tạo hiệu ứng mây tinh vân (Nebula) chuyển động huyền ảo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 70% 30%, rgba(100, 255, 218, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(241, 196, 15, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 50%, rgba(155, 89, 182, 0.08) 0%, transparent 60%);
+            animation: nebulaShift 90s linear infinite;
+            pointer-events: none;
+        }
+
+        /* Lớp sao thứ nhất - Sao nhỏ lấp lánh nhanh */
+        .stars-layer-1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1px 1px at 25px 35px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 70px 140px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 150px 60px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 220px 290px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 310px 110px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 380px 240px, #fff, rgba(0,0,0,0));
+            background-size: 400px 400px;
+            animation: starTwinkle 4s ease-in-out infinite alternate;
+        }
+
+        /* Lớp sao thứ hai - Sao màu tinh tú chuyển động chậm hơn */
+        .stars-layer-2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1px 1px at 55px 95px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 145px 320px, #f1c40f, rgba(0,0,0,0)), /* Sao vàng */
+                radial-gradient(1.5px 1.5px at 255px 185px, #64ffda, rgba(0,0,0,0)), /* Sao xanh ngọc */
+                radial-gradient(1px 1px at 345px 365px, #fff, rgba(0,0,0,0));
+            background-size: 500px 500px;
+            animation: starTwinkle 7s ease-in-out infinite alternate-reverse;
+            opacity: 0.8;
+        }
+
+        /* Hiệu ứng chuyển động các tầng CSS */
+        @keyframes nebulaShift {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        @keyframes starTwinkle {
+            0% { opacity: 0.2; transform: translateY(0); }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; transform: translateY(-5px); }
+        }
+
+        /* Khung chứa nội dung với hiệu ứng kính mờ cao cấp phủ aura vũ trụ */
+        .container {
+            background: rgba(12, 10, 24, 0.78);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 800px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8),
+                        0 0 40px rgba(100, 255, 218, 0.03);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 255, 218, 0.3);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9),
+                        0 0 50px rgba(100, 255, 218, 0.08);
+        }
+
+        /* Định dạng Tiêu đề */
+        h1 {
+            text-align: center;
+            color: #f1c40f; /* Màu vàng kim */
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.6em;
+            color: #cbd5e1;
+            letter-spacing: 1px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Định dạng đoạn văn */
+        p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Làm nổi bật một số từ khóa */
+        .highlight {
+            color: #64ffda;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+        }
+        
+        /* Chỉnh sửa cho giao diện điện thoại */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 35px 20px;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars-layer-1"></div>
+    <div class="stars-layer-2"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 12)</span>
+            TRUNG THÀNH
+        </h1>
+        
+        <p>Trung thành là sự kiên định đi theo một bậc trên của mình với 3 yếu tố: kỷ luật, tình cảm, và số phận.</p>
+        
+        <p>Ví dụ ta đi theo một vị chỉ huy của mình với yếu tố thứ nhất là <strong>Kỷ luật</strong>, nghĩa là ta cực kì vâng lời người chỉ huy đó.</p>
+        
+        <p>Hoặc ta đi theo vị chỉ huy đó với yếu tố thứ hai là <strong>Tình cảm</strong>, nghĩa là ta cực kì yêu quý người chỉ huy đó.</p>
+        
+        <p>Hoặc là ta đi theo vị chỉ huy đó với yếu tố thứ ba là <strong>Số phận</strong>, nghĩa là ta chấp nhận đặt cuộc đời mình gắn liền với người chỉ huy đó dù sướng khổ ra sao.</p>
+        
+        <p>Đạo đức Trung thành là một điều lớn trong cuộc đời của một con người. Có người cả đời không có ai để trung thành. Thực ra, nếu đời ta có được người để ta đặt lên niềm trung thành là một hạnh phúc lớn. Đa số con người chỉ có được những mối quan tâm sơ sài, đôi khi thân thiết, thỉnh thoảng kính trọng, nhưng để có được mối quan hệ khiến ta phải một lòng trung thành là rất khó, rất hiếm.</p>
+        
+        <p>Đạo đức trung thành chỉ đi đôi với sự nghiệp cao đẹp nào đó, ngoài ra chỉ là các mối quan hệ của công việc, giữ uy tín với nhau mà thôi. Làm ăn kinh tế thì cần uy tín. Giao du bạn bè thì cần nghĩa khí. Còn nói đến mức độ trung thành thì đã đạt đến tầm quan trọng của số phận cuộc đời. Đó là mối quan hệ của lãnh đạo và thuộc hạ, cùng theo đuổi một lý tưởng cao cả trên đời.</p>
+        
+        <p>Đa phần khi cùng lo việc nước, cùng đấu tranh vì chính nghĩa, cùng tu hành cao siêu, cùng bảo vệ môi trường Trái đất... thì người ta có sức mạnh của lý tưởng. Sức mạnh lý tưởng này đòi hỏi phải có đạo đức trung thành để tổ chức được ổn định bền vững. Thế nên người có đạo đức trung thành là người có phước lớn vì đã làm được điều Thiện lớn, đó là giúp cho tổ chức được ổn định bền vững.</p>
+        
+        <p>Giặc muốn phá hoại một đất nước thì trước hết phải xúi giục lôi kéo nhiều người phản bội bất trung. Giặc muốn phá hoại một tôn giáo thì cũng phải tác động sao cho có nhiều người phản bội bất trung. Ai không đủ đạo đức trung thành thì trở thành kẻ phá hoại, nên sẽ mang tội nặng.</p>
+        
+        <p>Chọn được một lãnh đạo, chọn được một bậc thầy, chọn được một tổ chức, chọn được một tổ quốc, rồi quyết lòng trung thành, đó là cuộc sống cao đẹp có ý nghĩa. Nhưng cái quyết lòng trung thành đó cần <span class="highlight">sức mạnh nội tâm lớn lắm</span>. Người tầm thường không thể trung thành với ai hết.</p>
+    </div>
+
+</body>
+</html>

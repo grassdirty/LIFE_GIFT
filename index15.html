@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 15) - Có Trách Nhiệm</title>
+    <style>
+        /* Thiết lập nền vũ trụ trật tự (Cosmic Order) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            /* Nền không gian sâu thẳm mang sắc xanh đen vũ trụ */
+            background: radial-gradient(circle at 50% 50%, #0a1128 0%, #060b19 60%, #02040a 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Tạo dải mây tinh vân vũ trụ (Nebula Cosmic Dust) chuyển động vô hình */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.04) 0%, transparent 45%),
+                        radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+            animation: cosmicRotation 120s linear infinite;
+            pointer-events: none;
+        }
+
+        /* Lớp chòm sao liên kết tạo cảm giác trật tự và quy luật */
+        .constellation-stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 10% 15%, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 85% 20%, #38bdf8, rgba(0,0,0,0)),
+                radial-gradient(2.5px 2.5px at 30% 75%, #f59e0b, rgba(0,0,0,0)), /* Sao hổ phách */
+                radial-gradient(1px 1px at 70% 60%, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50% 10%, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 90% 80%, #fff, rgba(0,0,0,0));
+            background-size: 600px 600px;
+            animation: starPulse 8s ease-in-out infinite alternate;
+        }
+
+        /* Hiệu ứng chuyển động hệ thống vũ trụ */
+        @keyframes cosmicRotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes starPulse {
+            0% { opacity: 0.4; transform: scale(0.97); }
+            50% { opacity: 0.95; }
+            100% { opacity: 0.6; transform: scale(1.03); }
+        }
+
+        /* Khung nội dung Kính mờ (Glassmorphism) với đường viền tinh thể sắc nét */
+        .container {
+            background: rgba(8, 14, 30, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            /* Đường viền xanh cyan mờ tượng trưng cho sự chính trực, luật pháp */
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 24px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
+                        0 0 30px rgba(56, 189, 248, 0.02);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(245, 158, 11, 0.3); /* Chuyển sắc vàng hổ phách khi hover */
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95),
+                        0 0 50px rgba(245, 158, 11, 0.05);
+        }
+
+        /* Thiết kế Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #f59e0b; /* Màu vàng hoàng kim của quả lành trái ngọt */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Định dạng Văn bản paragraph */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối nhấn mạnh định nghĩa và cốt lõi triết lý */
+        .highlight-box {
+            background: rgba(56, 189, 248, 0.04);
+            border-left: 4px solid #38bdf8;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: #bae6fd;
+            font-style: normal;
+        }
+
+        /* Phân loại các cấp độ đạo đức bằng danh sách tinh tế */
+        .morality-level {
+            margin: 20px 0;
+            padding-left: 15px;
+            border-left: 2px dashed rgba(255, 255, 255, 0.15);
+        }
+        
+        .level-item {
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            color: #cbd5e1;
+        }
+
+        /* Các lớp màu sắc từ khóa quan trọng */
+        .law-term {
+            color: #38bdf8; /* Màu xanh luật pháp, nghĩa vụ */
+            font-weight: 600;
+        }
+
+        .benefit-term {
+            color: #f43f5e; /* Màu hồng quyền lợi */
+            font-weight: 600;
+        }
+
+        .accent-gold {
+            color: #fbbf24; /* Màu vàng phúc lành, nhân quả */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(251, 191, 36, 0.2);
+        }
+
+        /* Giao diện tương thích cho Điện thoại di động */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 35px 20px;
+                border-radius: 18px;
+            }
+            h1 {
+                font-size: 1.8em;
+                letter-spacing: 1.5px;
+            }
+            p {
+                font-size: 1.05em;
+                line-height: 1.75;
+            }
+            .highlight-box {
+                padding: 15px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="constellation-stars"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 15)</span>
+            CÓ TRÁCH NHIỆM
+        </h1>
+        
+        <p>Trong luật pháp và trong triết học, có hai điều luôn đi đôi với nhau, đó là <span class="law-term">Nghĩa vụ</span> và <span class="benefit-term">Quyền lợi</span>. Ta làm trọn nghĩa vụ của mình thì ta xứng đáng hưởng được một số quyền lợi tương xứng. Ta có đóng thuế (nghĩa vụ) thì ta mới xứng đáng được ở trong một xã hội tiện nghi ( quyền lợi). Ta có đi lính (nghĩa vụ) thì gia đình ta mới được sống trong đất nước bình yên (quyền lợi)...</p>
+        
+        <p>Nghĩa vụ và Quyền lợi là sự công bằng hợp lý.</p>
+        
+        <p>Nhưng đa phần con người vốn ích kỷ chỉ thích tìm quyền lợi mà tránh né nghĩa vụ. Ta muốn sung sướng nhưng không chịu cống hiến. Người như thế là kém đạo đức. Còn người có đạo đức trung bình thì cân đối giữa sự cống hiến của mình so với cái quyền lợi mà mình thụ hưởng, làm sao coi cho được. Ăn cơm thì phải lau nhà rửa bát.</p>
+        
+        <p>Nhưng người có đạo đức cao thì thích thực hiện nghĩa vụ nhiều hơn thụ hưởng quyền lợi. Họ hiểu rằng phần nghĩa vụ dư ra sẽ trở thành <span class="accent-gold">phúc lành mai sau</span>. Họ hiểu rằng cống hiến nhiều làm tâm hồn ta bình an hạnh phúc.</p>
+        
+        <p>Hiểu như vậy nên họ luôn cố gắng lo cho cộng đồng một cách tận tụy. Họ chăm sóc gia đình chu đáo, họ hoàn thành công việc của cơ quan nhiều hơn yêu cầu, họ để ý giúp đỡ láng giềng cả khi chưa được yêu cầu...</p>
+        
+        <p>Nhưng còn một động cơ khiến cho một người sống có trách nhiệm nữa là bởi vì họ <span class="accent-gold">yêu thương con người</span>. Họ yêu gia đình, họ yêu đồng nghiệp, họ yêu láng giềng, họ yêu xã hội, họ yêu đất nước. Tình yêu này khiến họ rất thích chăm sóc giúp đỡ mọi người chung quanh. Họ làm trọn vẹn những việc theo bổn phận của mình, và cố gắng làm lấn qua việc của người khác nữa.</p>
+        
+        <p>Người cha kiếm tiền về nuôi vợ con, nhưng vẫn sẵn lòng làm thêm việc nhà đỡ đần vợ con. Người công chức làm xong đi nhặt rác quanh khu phố. Người doanh nhân lúc rảnh đi về chăm sóc khu rừng trồng... Họ đã làm thêm ngoài bổn phận bắt buộc. Họ có yêu thương và có trách nhiệm.</p>
+        
+        <div class="highlight-box">
+            <p><strong>Cốt lõi:</strong> Sống có trách nhiệm gồm hai yếu tố, một là <span class="accent-gold">có lòng yêu thương</span>, hai là <span class="law-term">làm trọn vẹn các bổn phận</span> của mình đối với gia đình và xã hội. Thêm nữa là cố gắng làm nhiều hơn bổn phận của mình.</p>
+        </div>
+        
+        <p>Bổn phận là gì, suy cho cùng, bổn phận chính là chăm sóc cho những người trong tình cảm của mình, trong đạo nghĩa của mình. Bổn phận cũng là hoàn thành các công việc trong quy định cho mình.</p>
+        
+        <p>Muốn sống có trách nhiệm, nghĩa là muốn hoàn thành công việc quy định, chăm sóc được cho người thân yêu, thì ta buộc phải bớt tìm các niềm vui riêng. Người sa đà vào các trò vui độc hại thì không bao giờ có thể là người có trách nhiệm được. Nghiện rượu, mê cờ bạc, ham sắc đẹp... thì không còn đầu óc tâm hồn nghĩ đến người thân nữa. Cha mẹ, vợ chồng, con cái, xã hội, tổ quốc không có chỗ đứng trong tâm của người đam mê dục lạc.</p>
+        
+        <p>Sống có trách nhiệm là phải chịu cực. Ban đầu thấy cực, nhưng sau nhiều năm sẽ trở thành hạnh phúc. Người sống có trách nhiệm là người đem niềm vui đến cho mọi người chung quanh mình, kềm chế những trò vui của mình, thì <span class="accent-gold">luật Nhân quả</span> sẽ đem về lại quả lành trái ngọt tất nhiên.</p>
+    </div>
+
+</body>
+</html>

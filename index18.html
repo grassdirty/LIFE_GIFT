@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 18) - Hợp Tác</title>
+    <style>
+        /* Nền vũ trụ kết nối mạng lưới (Cosmic Nexus) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            /* Phông nền không gian sâu thẳm sắc xanh ngọc bích huyền bí */
+            background: radial-gradient(circle at 50% 50%, #06181c 0%, #030c0e 60%, #010405 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Tầng tinh vân chuyển động tượng trưng cho sự giao thoa, hợp lực */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 25% 25%, rgba(45, 212, 191, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.04) 0%, transparent 45%),
+                        radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.03) 0%, transparent 40%);
+            animation: nexusRotation 140s linear infinite;
+            pointer-events: none;
+        }
+
+        /* Tầng hạt sáng liên kết (Glowing Nodes) biểu trưng cho các cá thể hợp tác */
+        .nexus-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, #2dd4bf, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 75% 15%, #10b981, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 40% 70%, rgba(45, 212, 191, 0.4), rgba(0,0,0,0)), 
+                radial-gradient(1px 1px at 85% 80%, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 10% 85%, #f59e0b, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 60% 45%, #2dd4bf, rgba(0,0,0,0));
+            background-size: 700px 700px;
+            animation: nodePulse 10s ease-in-out infinite alternate;
+        }
+
+        /* Chuyển động xoay của hệ thống tinh vân */
+        @keyframes nexusRotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hiệu ứng ẩn hiện nhịp nhàng của các điểm kết nối */
+        @keyframes nodePulse {
+            0% { opacity: 0.3; transform: scale(0.96) translateY(0); }
+            50% { opacity: 0.9; }
+            100% { opacity: 0.5; transform: scale(1.04) translateY(-10px); }
+        }
+
+        /* Khung chứa Glassmorphism cao cấp viền luồng sáng xanh ngọc */
+        .container {
+            background: rgba(4, 15, 18, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(45, 212, 191, 0.18);
+            border-radius: 24px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85),
+                        0 0 40px rgba(45, 212, 191, 0.03) inset;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(45, 212, 191, 0.4);
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95),
+                        0 0 60px rgba(45, 212, 191, 0.08) inset;
+        }
+
+        /* Tiêu đề chính */
+        h1 {
+            text-align: center;
+            color: #2dd4bf; /* Màu xanh ngọc rực rỡ tượng trưng cho sự thông minh, hội nhập */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(45, 212, 191, 0.35);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Định dạng các đoạn văn bản */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối đúc kết cốt lõi tinh hoa triết lý */
+        .core-philosophy-box {
+            background: linear-gradient(90deg, rgba(45, 212, 191, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%);
+            border-left: 4px solid #2dd4bf;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+        }
+        
+        .core-philosophy-box p {
+            margin: 0;
+            color: #ccfbf1;
+            font-style: italic;
+        }
+
+        /* Khối cảnh báo về các yếu tố phá hoại sự hợp tác */
+        .warning-box {
+            background: rgba(244, 63, 94, 0.03);
+            border: 1px dashed rgba(244, 63, 94, 0.25);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .warning-box h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #fb7185; /* Hồng đỏ cảnh báo */
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .warning-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .warning-list li {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+
+        .warning-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Các lớp màu làm nổi bật từ khóa */
+        .keyword-intelligence {
+            color: #2dd4bf; /* Xanh ngọc - Trí tuệ */
+            font-weight: 600;
+        }
+
+        .keyword-morality {
+            color: #f59e0b; /* Vàng hổ phách - Đạo đức */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+        }
+
+        .keyword-danger {
+            color: #fb7185; /* Đỏ nhạt - Yếu tố nguy hại */
+            font-weight: 600;
+        }
+
+        /* Tối ưu hóa giao diện hiển thị trên điện thoại di động */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 35px 20px;
+                border-radius: 18px;
+            }
+            h1 {
+                font-size: 1.8em;
+                letter-spacing: 1.5px;
+            }
+            p, .warning-list li {
+                font-size: 1.05em;
+                line-height: 1.75;
+            }
+            .warning-box {
+                padding: 18px;
+            }
+            .core-philosophy-box {
+                padding: 15px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nexus-grid"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 18)</span>
+            HỢP TÁC
+        </h1>
+        
+        <p>Có nhiều việc mà ta không thể làm một mình. Có rất nhiều việc mà ta cần thêm người hợp sức. Loài người thông minh nên biết hợp sức với nhau để tạo ra cuộc sống tiện nghi tiến bộ. Loài vật ít thông minh hơn nên sự hợp tác của chúng chỉ ở chừng mực đơn giản. Ta đánh giá giống loài thông minh dựa trên mức độ hợp tác là hoàn toàn chính xác. <span class="keyword-intelligence">Càng thông minh, con người càng hướng đến việc hợp tác với nhau.</span> Và như vậy, ngược lại, càng ít có dấu hiệu hợp tác, thì những con người đó kém thông minh.</p>
+        
+        <p>Việc hợp tác căn bản của con người là gia đình vợ chồng con cái. Nếu làm việc một mình, người đó sẽ thiếu trước hụt sau. Có cái ăn thì thiếu cái mặc, thiếu nhà ở. Lo tìm vật liệu làm nhà thì không tìm được lương thực. Từ khi có gia đình, họ phân công nhau trong một sự hợp tác chung, và đời sống họ khá lên theo cấp số nhân. Có hai ba người cùng làm nhà thì họ có thể xây căn nhà to hơn với cột lớn hơn, mái cao hơn, mảng tường rộng hơn. Còn nếu chỉ tự xây, họ chỉ làm được cái chòi bé bé.</p>
+        
+        <p>Xã hội tiến bộ hơn khi cộng đồng bộ tộc hợp tác đi săn, trồng trọt, xây nhà, rèn luyện, tự vệ. Họ an toàn hơn trong một cộng đồng đông hơn và hợp tác hơn.</p>
+        
+        <p>Rồi khi sự phát triển của xã hội khiến cho dân số đông thêm, quyền lực cai trị mạnh hơn, buộc con người phải sống hợp tác trong xã hội rất lớn, thì sự tiến bộ của loài người vượt xa thời bộ tộc ít ỏi.</p>
+        
+        <p>Ngày nay, dù trực tiếp hay gián tiếp, con người vẫn đang hợp tác để sống trong cộng đồng thế giới rộng lớn hội nhập này. Đóng một đồng thuế là ta đã chứng tỏ sự hợp tác của mình với cả đất nước rồi. Và ta chứng kiến sự tiến bộ của loài người cho đến khi con người bắt đầu tạo ra robot có trí tuệ độc lập.</p>
+        
+        <p>Nhưng thôi, ta quay lại với sự hợp tác trực tiếp trong những công việc gần gũi với mình. Ta đã luôn luôn hợp tác gián tiếp với cả thế giới rồi, bây giờ ta nói về tinh thần hợp tác trong những việc gần gũi quanh ta, vì đó là biểu hiện của đạo đức và sự thông minh.</p>
+        
+        <div class="core-philosophy-box">
+            <p><strong>Cốt lõi:</strong> Càng thông minh, con người càng hướng tới sự hợp tác làm việc. Càng đạo đức, con người càng bảo vệ sự hợp tác đó trong tình yêu thương ân nghĩa với nhau.</p>
+        </div>
+        
+        <div class="warning-box">
+            <h3>⚠️ Các yếu tố khiến sự hợp tác không bền vững:</h3>
+            <ul class="warning-list">
+                <li><span class="keyword-danger">Lười biếng:</span> Kẻ lười biếng đẩy việc cho người khác, làm mất đi sự công bằng, nên phá hoại sự hợp tác.</li>
+                <li><span class="keyword-danger">Chủ nghĩa cá nhân:</span> Muốn nổi bật, muốn anh hùng cá nhân, muốn tranh công, thích kể công.</li>
+                <li><span class="keyword-danger">Thiếu bao dung:</span> Không nhận ra ưu điểm của đồng đội, cứ săm soi rình tìm khuyết điểm của đồng đội, cũng khiến sự hợp tác tan vỡ.</li>
+            </ul>
+        </div>
+        
+        <p>Hợp tác là thông minh và đạo đức. <span class="keyword-morality">Đạo đức làm cho sự hợp tác trở thành niềm vui hạnh phúc.</span> <span class="keyword-intelligence">Thông minh làm cho sự hợp tác có hiệu quả.</span> Ai yêu thích sự hợp tác thì đó là người thông minh và có đạo đức.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức - An Vui</title>
+    <style>
+        /* Thiết lập nền vũ trụ (Cực quang bình yên) */
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Ảnh cực quang và bầu trời sao từ Unsplash */
+            background-image: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=2500&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Khung chứa nội dung mờ ảo */
+        .container {
+            background-color: rgba(15, 25, 35, 0.82); /* Nền tối xanh rêu/lam sâu thẳm */
+            backdrop-filter: blur(12px); /* Hiệu ứng kính mờ */
+            max-width: 850px;
+            padding: 45px 55px;
+            margin: 40px 20px;
+            border-radius: 18px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #80cbc4; /* Xanh ngọc thanh bình */
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Highlight từ khóa */
+        .hl-peace {
+            color: #80cbc4; /* Xanh ngọc: an vui, thanh tịnh */
+            font-weight: bold;
+        }
+
+        .hl-chaos {
+            color: #ff8a65; /* Cam đỏ: bất an, loạn động */
+            font-weight: bold;
+        }
+
+        /* Khung kể chuyện */
+        .story-block {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            padding: 20px 25px;
+            border-left: 4px solid #b2dfdb;
+            border-radius: 0 8px 8px 0;
+            margin: 30px 0;
+            font-style: italic;
+            color: #e0f2f1;
+        }
+        
+        .conclusion {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #80cbc4;
+            font-weight: bold;
+            margin-top: 35px;
+            padding: 20px;
+            border-top: 1px dashed rgba(128, 203, 196, 0.4);
+            border-bottom: 1px dashed rgba(128, 203, 196, 0.4);
+        }
+
+        /* Hiệu ứng thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.6); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(128, 203, 196, 0.5); 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(128, 203, 196, 0.8); 
+        }
+
+        /* Responsive cho thiết bị di động */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                font-size: 1.05rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .story-block {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ĐẠO ĐỨC (số 5)</h1>
+        <h2>An Vui</h2>
+        
+        <p>Tâm đạo đức tương thích với nội tâm yên ổn vui vẻ. Người sống đạo đức sẽ là người có nội tâm <span class="hl-peace">an vui</span>. Còn người làm những điều xấu xa, độc ác, có thể tạm thời giành được quyền lợi cho mình, nhưng phải trả giá bằng nội tâm <span class="hl-chaos">bất an xao động</span>.</p>
+        
+        <p>Ta có những cảm giác vui khác nhau như Vui mừng, Vui vẻ, Vui sướng, Hạnh phúc, Khoái cảm, Lạc thú, Sung sướng, Khoái trá, Khoái chí, Sảng khoái, Hứng thú, Hào hứng, Thích thú... Không phải cái cảm giác vui nào cũng tốt, có những cái càng vui thì tâm càng <span class="hl-chaos">bất an xao động</span>, càng bị nghiện, càng ích kỷ.</p>
+        
+        <p>Có những gia đình phải đánh mất hạnh phúc chỉ vì một người trong gia đình đó tìm vui trong lạc thú sai lầm, nghiện ngập, ích kỷ như rượu, cờ bạc, ma túy, tà dâm... Họ chỉ còn biết niềm vui của riêng họ, không cần biết đến nỗi khổ của mọi người chung quanh. Đó chính là ích kỷ tột độ. Người chung quanh họ khổ đã đành, mà chính họ cũng <span class="hl-chaos">bất an loạn động</span>.</p>
+        
+        <p>Dĩ nhiên rồi Luật Nhân quả sẽ đem lại cho họ quả báo tương xứng về sau, chỉ còn có đau khổ kéo dài không sao thoát ra được. Nhưng trong lúc họ hưởng thụ, trong lúc họ tranh giành, trong lúc họ ác độc gây khổ cho người khác, họ vừa có cảm giác thích thú, vừa bị <span class="hl-chaos">loạn tâm</span>. Sự ác độc, tâm bất thiện luôn tương thích với sự loạn tâm.</p>
+        
+        <p>Ngược lại, tâm đạo đức, tâm yêu điều Thiện, đời sống vị tha, sẽ khiến cho tâm hồn ta <span class="hl-peace">an vui</span>. Cái an vui đó không bừng cháy, không sôi động, không ồn ào, mà chỉ là sự êm ả, nhẹ nhàng, nhưng hạnh phúc. Người có trí tuệ sẽ hiểu cái an vui nhẹ nhàng đó là vô giá, nên chấp nhận thiệt thòi, chấp nhận cực khổ, chấp nhận phụng sự, chấp nhận khước từ, để giữ đời mình trong Thiện giới.</p>
+        
+        <div class="story-block">
+            Câu chuyện một anh chàng lái xe đến ký hợp đồng làm ăn với đối tác, xuống xe phát hiện bánh xe mình có vết máu. Anh nghi ngờ mình đã vô tình gây tai nạn trên đường mà không biết. Anh chấp nhận bỏ buổi hẹn ký hợp đồng để quay xe lại đi tìm người bị nạn. Anh tìm được nạn nhân để đem cấp cứu, và bị nghi ngờ gây tai nạn. Khi tỉnh dậy, nạn nhân kể bị một chiếc mô tô tông rồi chạy mất. Cô nằm bất tỉnh ở ven đường. Anh này chạy ngang cán lên dòng máu mà thôi. Sau này được hỏi, anh nói nếu anh bỏ mặc không chịu tìm kiếm, suốt đời anh sẽ ray rứt bất an. Nhờ quay lại cứu người mà anh sống <span class="hl-peace" style="color: #b2dfdb;">an vui</span> một đời còn lại.
+        </div>
+        
+        <p>Các tín đồ đạo Phật thường hay tu tập thiền định để được yên tâm, lắng lòng thanh tịnh. Họ cho rằng khi tâm vào được trạng thái nhập định không còn suy nghĩ gì nữa thì họ sẽ đắc đạo cao siêu. Nhưng Đức Thích Ca Mâu Ni đã dạy rằng điều kiện để họ có thể nhập định được là trước đó họ phải sống hết sức đạo đức. Họ phải tạo nhiều thiện nghiệp, phải giữ giới tránh các điều ác, phải giúp đỡ, cúng dường, bố thí rất nhiều.</p>
+        
+        <p class="conclusion">
+            Rõ ràng các bậc thánh đều khuyến khích đời sống đạo đức để làm đường dẫn vào nội tâm thanh tịnh an vui.
+        </p>
+    </div>
+
+</body>
+</html>

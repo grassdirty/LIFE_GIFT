@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 22) - Khen Ngợi & Động Viên</title>
+    <style>
+        /* Nền vũ trụ Đêm Về Sáng - tượng trưng cho sự chuyển hóa từ u ám sang tươi sáng */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 100%, #2a0b17 0%, #15050b 60%, #080204 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fdf8f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Luồng sáng ấm áp lan tỏa từ trung tâm (Warm Heart Glow) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150vw;
+            height: 150vh;
+            z-index: -2;
+            background: radial-gradient(circle, rgba(251, 146, 60, 0.08) 0%, rgba(244, 63, 94, 0.04) 30%, transparent 65%);
+            animation: heartGlowPulse 8s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt sáng bay lên - Tượng trưng cho lời động viên nâng đỡ tinh thần */
+        .uplifting-sparks {
+            position: fixed;
+            bottom: -10vh;
+            left: 0;
+            width: 100%;
+            height: 120vh;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2.5px 2.5px at 15% 90%, #fde047, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 30% 70%, #fda4af, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 60% 85%, #fcd34d, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 85% 60%, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 45% 40%, #fca5a5, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 75% 25%, #fde047, rgba(0,0,0,0));
+            background-size: 100vw 100vh;
+            animation: sparksRise 20s linear infinite;
+        }
+
+        @keyframes heartGlowPulse {
+            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        @keyframes sparksRise {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Khung nội dung Glassmorphism Ấm áp */
+        .container {
+            background: rgba(26, 11, 17, 0.82);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            /* Viền chuyển sắc hồng vàng dịu nhẹ */
+            border: 1px solid rgba(251, 146, 60, 0.2);
+            border-radius: 24px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9),
+                        0 0 50px rgba(251, 146, 60, 0.05) inset;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(251, 146, 60, 0.4);
+            box-shadow: 0 40px 90px rgba(0, 0, 0, 0.95),
+                        0 0 70px rgba(251, 146, 60, 0.08) inset;
+        }
+
+        /* Tiêu đề */
+        h1 {
+            text-align: center;
+            color: #fcd34d; /* Vàng sáng rực rỡ */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(252, 211, 77, 0.4);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #fda4af; /* Hồng phấn mềm mại */
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Đoạn văn */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối "3 Cái Lợi Của Lời Khen" */
+        .benefit-box {
+            background: linear-gradient(135deg, rgba(251, 146, 60, 0.08) 0%, rgba(244, 63, 94, 0.03) 100%);
+            border-left: 4px solid #fcd34d;
+            padding: 22px 25px 22px 20px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .benefit-box p {
+            margin-bottom: 12px;
+            color: #fef3c7;
+        }
+
+        .benefit-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối "Bao Che & Nói Sự Thật" (Ngoại lệ đấu tranh cho lẽ phải) */
+        .truth-box {
+            background: rgba(56, 189, 248, 0.03);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .truth-box::before {
+            content: "⚖️ SỰ THẬT & BẢO VỆ LẼ PHẢI";
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            background: #0f172a;
+            color: #7dd3fc;
+            padding: 0 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* Semantic Highlight Colors */
+        .kw-criticism {
+            color: #fb7185; /* Đỏ/Hồng nhạt - Lời chê bai, sự ác độc, u ám */
+            font-weight: 600;
+        }
+
+        .kw-praise {
+            color: #fcd34d; /* Vàng sáng - Lời khen ngợi, tử tế, ánh sáng */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(252, 211, 77, 0.25);
+        }
+
+        .kw-karma {
+            color: #34d399; /* Xanh ngọc - Luật nhân quả, trí tuệ */
+            font-weight: 600;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; border-radius: 18px; }
+            h1 { font-size: 1.8em; letter-spacing: 1.5px; }
+            p { font-size: 1.05em; line-height: 1.75; }
+            .benefit-box { padding: 18px; }
+            .truth-box { padding: 25px 18px 18px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp hạt sáng bay lên (lời động viên) -->
+    <div class="uplifting-sparks"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 22)</span>
+            KHEN NGỢI - ĐỘNG VIÊN
+        </h1>
+        
+        <p>Thông thường con người ta dễ nhìn thấy khuyết điểm lỗi lầm của người khác rồi lật đật <span class="kw-criticism">chê bai</span>. Có một cái gì trong tâm khiến chúng ta thiên về khuynh hướng soi mói lỗi người, và sau đó chê trách người. Cái gì đó rất bí mật, làm cho ta có cảm giác ai cũng dở chỉ một người không dở. Dĩ nhiên người không dở đó là ta.</p>
+        
+        <p><span class="kw-criticism">Chê bai</span> làm mích lòng người khác. Mích lòng người khác là làm cho các quan hệ xã hội xấu đi dần dần. Xã hội bớt thương nhau là xã hội kém hạnh phúc. Người hay mở miệng chê bai là người làm cho cuộc đời này u ám hơn. Khi chê bai, ta bị người oán thù. Khi chê bai, ta làm nhiều người tin ta xúm nhau ghét người bị chê kia. Vì thế ta tổn phúc.</p>
+        
+        <p>Hay chê bai cũng là ác độc. Làm tổn hại danh dự người khác là ác độc. <span class="kw-karma">Nhân quả</span> sẽ khiến người hay chê bai sẽ bị nhiều bất hạnh đau khổ, đền lại cái miệng làm người khác đau khổ.</p>
+        
+        <p>Tuy nhiên, chê bai sinh nghiện. Ai quen miệng chê bai thiên hạ rồi khó bỏ, vì khi chê bai người khác, ta xuất hiện một khoái cảm thầm kín. Cái khoái cảm này làm ta nghiện, nói chuyện một chốc là kiếm nhân vật để chê bai. Càng chê bai thì càng có tội, và càng nghiện. Càng nghiện thì lại càng thích chê bai. Tội tăng lên rất nhanh.</p>
+        
+        <p>Chỉ có cái miệng hay chê thôi mà bao nhiêu phúc đều đổ sông đổ bể hết.</p>
+        
+        <p>Chê bai làm người ta ghét mình, xa lánh mình, thì ngược lại, lời <span class="kw-praise">khen ngợi động viên</span> làm người dễ có thiện cảm với mình, đến gần mình. Chê bai gây tội, thì khen ngợi tạo phúc. Nhưng không dễ để ta cất lời ngợi khen ai.</p>
+        
+        <p>Muốn ngợi khen ai, ta phải nhìn thấy ưu điểm của người đó. Đây là điều rất khó, có một cái gì bí mật che mắt ta để ta khó nhìn ra điều tốt của ai. Ta phải có trí tuệ và đạo đức ở mức độ khá mới phát hiện ưu điểm của người khác.</p>
+        
+        <div class="benefit-box">
+            <p><strong>Lời khen ngợi có ít nhất 3 cái lợi:</strong></p>
+            <p>1. Làm cho quan hệ giữa cuộc đời này tốt thêm lên.</p>
+            <p>2. Làm cho ta có phúc.</p>
+            <p>3. Động viên người kia cố gắng thêm.</p>
+        </div>
+        
+        <p>Dĩ nhiên cũng có lời khen làm người kia thêm kiêu hãnh, thêm chủ quan, rồi thỏa mãn không phấn đấu tiếp. Nhưng cũng có những lời <span class="kw-praise">khen ngợi đúng lúc</span> khiến người ta lấy lại tinh thần để bước tới.</p>
+        
+        <p>Người biết mở miệng khen đã là người tử tế. Hèn chi người Anh Mỹ hay cám ơn lời khen tặng bằng câu <em>"Thanks, you're very kind"</em>, cám ơn, bạn rất tử tế. Người hẹp hòi thấy người khác hay cũng không thèm khen, hà tiện lời khen. Người rộng lượng phát hiện ai hay liền lập tức khen ngợi.</p>
+        
+        <p>Có khi chẳng cần khen trước mặt, chỉ khen sau lưng thôi, khen với những người khác, cũng làm cho cuộc đời đẹp hơn. Lời chê bai bôi xấu lên bức tranh cuộc đời, còn <span class="kw-praise">lời khen ngợi tô đẹp bức tranh cuộc đời</span>.</p>
+        
+        <p>Theo <span class="kw-karma">luật Nhân quả</span>, ta khen ai về ưu điểm nào, ta cũng sẽ thành tựu ưu điểm đó; ta chê bai ai khuyết điểm nào, ta cũng sẽ mắc đúng khuyết điểm đó. Vậy thì dại gì ta không thường xuyên khen ngợi và tránh né chê bai...</p>
+        
+        <div class="truth-box">
+            <p>Tuy nhiên trên cuộc đời có những kẻ không tốt, làm điều bất nhân thất đức, hay mưu hại người khác, hay giành giật vơ vét về cho mình. Có khi ta không đủ phước lực để quở trách họ, ta không đủ uy đức để trừng phạt họ, không đủ lời lẽ để khuyên răn họ. Mà nếu ta lặng im thì cũng xem như đồng lõa, cũng có tội với trời đất. Kẻ xấu ác đó còn phước đời trước thì hiện tại cũng chẳng ai đánh đổ được. Rất khó xử.</p>
+            
+            <p>Rồi có người hỏi ta về kẻ xấu ác đó, ta sợ mắc lỗi chê bai nên không dám kể thật, thì chính xác là ta mắc tội bao che. Lúc đó ta phải mạnh dạn nói thật, không phải nói xấu vì tâm hơn thua, mà nói đúng sự thật để tìm cơ hội đấu tranh cho lẽ phải, đấu tranh bênh vực nhiều người đang bị mưu hại ức hiếp.</p>
+        </div>
+        
+        <p>Còn bình thường, ta tập hạnh <span class="kw-praise">khen ngợi để xây dựng, để động viên, để tạo phúc</span>.</p>
+    </div>
+
+</body>
+</html>

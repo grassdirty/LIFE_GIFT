@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 21) - Nhẫn Nhịn</title>
+    <style>
+        /* Thiết lập nền vũ trụ tĩnh lặng (Deep Zen Cosmos) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            /* Nền không gian vũ trụ mang sắc tím thiền sâu và đen huyền bí */
+            background: radial-gradient(circle at 50% 50%, #090514 0%, #04020a 70%, #010003 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Tầng mây tinh vân cực kỳ chậm rãi tượng trưng cho tâm trí trầm lắng, tĩnh tại */
+        body::before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 60%),
+                        radial-gradient(circle at 70% 70%, rgba(45, 212, 191, 0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.02) 0%, transparent 40%);
+            animation: deepZenRotation 180s linear infinite;
+            pointer-events: none;
+        }
+
+        /* Tầng sao lấp lánh nhịp thở nhẹ nhàng (Calm Breathing Stars) */
+        .zen-stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 15% 15%, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 20%, rgba(167, 139, 250, 0.5), rgba(0,0,0,0)), /* Sao tím mờ */
+                radial-gradient(1px 1px at 35% 60%, rgba(255,255,255,0.4), rgba(0,0,0,0)),
+                radial-gradient(2.5px 2.5px at 70% 75%, rgba(245, 158, 11, 0.3), rgba(0,0,0,0)), /* Sao hổ phách */
+                radial-gradient(1.5px 1.5px at 50% 15%, rgba(255,255,255,0.5), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90% 85%, rgba(167, 139, 250, 0.4), rgba(0,0,0,0));
+            background-size: 650px 650px;
+            animation: calmBreath 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes deepZenRotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes calmBreath {
+            0% { opacity: 0.3; transform: scale(0.98); }
+            100% { opacity: 0.8; transform: scale(1.02); }
+        }
+
+        /* Khung nội dung Kính mờ tĩnh lặng (Serene Glassmorphism) */
+        .container {
+            background: rgba(8, 5, 15, 0.82);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            /* Viền tím nhạt thanh tịnh */
+            border: 1px solid rgba(167, 139, 250, 0.15);
+            border-radius: 24px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9),
+                        0 0 40px rgba(167, 139, 250, 0.02) inset;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(167, 139, 250, 0.35);
+            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95),
+                        0 0 60px rgba(167, 139, 250, 0.06) inset;
+        }
+
+        /* Thiết kế Tiêu đề */
+        h1 {
+            text-align: center;
+            color: #fbbf24; /* Màu vàng hoàng kim trí tuệ */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #a78bfa; /* Sắc tím thiền định */
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Định dạng Văn bản paragraph */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối Trích dẫn / Định hướng tư duy cốt lõi */
+        .zen-quote-box {
+            background: linear-gradient(90deg, rgba(167, 139, 250, 0.08) 0%, rgba(167, 139, 250, 0.01) 100%);
+            border-left: 4px solid #a78bfa;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+        }
+        
+        .zen-quote-box p {
+            margin: 0;
+            color: #ddd6fe;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.2);
+        }
+
+        /* Khối Liệt kê Các Loại Động Tâm (Màu sắc trầm lắng để kềm chế cảm xúc) */
+        .disturbance-list-box {
+            background: rgba(244, 63, 94, 0.02);
+            border: 1px dashed rgba(244, 63, 94, 0.2);
+            border-radius: 16px;
+            padding: 22px 25px;
+            margin: 30px 0;
+        }
+
+        .disturbance-list-box h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #fda4af;
+            font-size: 1.15em;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .disturbance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .disturbance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .disturbance-item {
+            font-size: 1.1em;
+            color: #f1f5f9;
+            line-height: 1.6;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .disturbance-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #f43f5e;
+            font-weight: bold;
+        }
+
+        /* Khối Liệt kê Các Phương Pháp Tu Dưỡng Nội Tâm */
+        .method-section {
+            margin: 35px 0;
+        }
+
+        .method-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .method-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #a78bfa;
+            font-size: 1.15em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .method-card h4 span {
+            background: rgba(167, 139, 250, 0.15);
+            color: #c084fc;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.85em;
+            margin-right: 10px;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+        }
+
+        .method-card p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.75;
+            color: #cbd5e1;
+        }
+
+        /* Các từ khóa phân loại màu tinh tế */
+        .kw-unmoved {
+            color: #a78bfa; /* Tím - Nội tâm bất động */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(167, 139, 250, 0.2);
+        }
+
+        .kw-wisdom {
+            color: #fbbf24; /* Vàng - Trí tuệ, nhân quả */
+            font-weight: 600;
+        }
+
+        .kw-hurt {
+            color: #fda4af; /* Hồng nhạt - Động tâm, tổn thất */
+            font-weight: 550;
+        }
+
+        .kw-love {
+            color: #2dd4bf; /* Xanh ngọc - Yêu thương tha thứ cao cấp */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(45, 212, 191, 0.2);
+        }
+
+        /* Điều chỉnh giao diện trên thiết bị di động */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 35px 20px;
+                border-radius: 18px;
+            }
+            h1 {
+                font-size: 1.8em;
+                letter-spacing: 1.5px;
+            }
+            p {
+                font-size: 1.05em;
+                line-height: 1.75;
+            }
+            .zen-quote-box p {
+                font-size: 1.1em;
+            }
+            .method-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="zen-stars"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 21)</span>
+            NHẪN NHỊN
+        </h1>
+        
+        <p>Trên đời không có gì luôn đúng ý thích của ta. Có người sẽ ghét ta. Có hoàn cảnh ngang trái với ta. Nhiều lúc cơ cực, thậm chí nhục nhã vô cùng. Dĩ nhiên ta tin rằng mọi thứ khổ sở đó đều đến từ lỗi lầm hay sơ xuất từ quá khứ xa xưa. Tất cả có lý do của nó. Bây giờ ta cũng chẳng nhớ để biết cụ thể ta đã làm gì trong kiếp xưa nữa. Ta chỉ can đảm nhận lỗi về mình cho tất cả nghịch cảnh.</p>
+        
+        <div class="zen-quote-box">
+            <p>Vấn đề là khi nghịch cảnh đến ta phải làm sao để đừng động tâm, đó là thành công.</p>
+        </div>
+        
+        <div class="disturbance-list-box">
+            <h3>Có nhiều loại động tâm với nghịch cảnh:</h3>
+            <div class="disturbance-grid">
+                <div class="disturbance-item"><span class="kw-hurt">Tức giận</span>, nhất là khi có người xúc phạm, nói nặng ta.</div>
+                <div class="disturbance-item"><span class="kw-hurt">Buồn khổ</span>, nhất là khi ta bị tai nạn, bị bệnh tật.</div>
+                <div class="disturbance-item"><span class="kw-hurt">Căm thù</span>, nhất là khi có kẻ nào mưu hại ta, hạ uy tín ta với công chúng.</div>
+                <div class="disturbance-item"><span class="kw-hurt">Thù dai</span>, ôm mối thù hoài, khi mà hiện tại chưa trả đũa được.</div>
+                <div class="disturbance-item"><span class="kw-hurt">Tự ái</span>, khi không được tôn trọng đúng mức trước mọi người.</div>
+            </div>
+        </div>
+        
+        <p>Nếu ta đạt được trình độ không động tâm trước nghịch cảnh là ta đã có một bản lĩnh lớn trong cuộc đời. Các vĩ nhân đều đạt được trình độ <span class="kw-unmoved">tâm bất động trước nghịch cảnh</span>. Tâm có bất động rồi ta mới có sáng suốt tìm cách xử lý công việc hợp lý nhất. Người nóng lên hay làm liều cho bõ tức, mặc kệ hậu quả, thì đúng là hậu quả bi thảm hơn. Người ta chửi một câu, tức quá đâm người ta một nhát chết tươi, rồi trốn đâu cho thoát tù tội. Khi bình tĩnh ta sẽ thấy câu chửi là rất nhẹ, giết người là quá nặng. Ta dùng cái tội nặng để đáp lại cái tội nhẹ là rất uổng phí cuộc đời, uổng phí công sức. Chẳng khôn ngoan chút nào.</p>
+        
+        <p>Còn nếu ta nhẫn nhịn bỏ qua, có người cho ta yếu hèn, có người cho ta biết kềm chế, chỉ có ta biết ta đang tu dưỡng nội tâm bất động vì đạo đức mà thôi.</p>
+        
+        <p><span class="kw-unmoved">Tâm bất động là tài sản quý giá của ta.</span> Ta chẳng dại gì để xảy mất tâm bất động đó. Tâm bất động vừa là hạnh phúc của ta, vừa là trí tuệ của ta, vừa là đạo đức của ta. Kẻ kia chỉ nói vài câu xúc phạm, chẳng tốn đồng nào, sao ta lại nổi giận lên làm mất tài sản nội tâm của mình.</p>
+        
+        <p>Hoàn cảnh ngang trái bất lợi, sao ta lại khởi tâm buồn khổ để tổn thất nặng hơn. Hoặc kẻ kia mưu hại làm cho ta khốn cùng đau đớn, ta nuôi lòng căm thù chỉ làm cho ta mất mát công đức đạo đức thêm mà thôi.</p>
+        
+        <div class="method-section">
+            <p style="font-weight: 600; color: #fbbf24; margin-bottom: 15px;">Có 3 cách cơ bản để ta giữ được nội tâm bất động:</p>
+            
+            <div class="method-card">
+                <h4><span>1</span> Suy nghiệm luật Nhân quả</h4>
+                <p>Chắc ngày xưa ta cũng xúc phạm ai nên bây giờ bị xúc phạm lại. Do nhận lỗi về mình nên ta có sức mạnh nội tâm, khiến cho tâm vững vàng bất động. Nhận lỗi về mình là phương pháp tạo sức mạnh nội tâm rất lớn.</p>
+            </div>
+            
+            <div class="method-card">
+                <h4><span>2</span> Tu tập thiền định, khí công, yoga</h4>
+                <p>Nhờ tập quen theo dõi hơi thở lâu ngày mà tâm ta trầm lắng yên tĩnh. Bây giờ gặp nghịch cảnh thế nào, tâm cũng bình thản bất động.</p>
+            </div>
+            
+            <div class="method-card">
+                <h4><span>3</span> Bày tỏ sự kính trọng với các bậc thánh</h4>
+                <p>Mỗi người theo tôn giáo mình sẽ tìm thấy vị thánh nơi tôn giáo mình có được nội tâm bất động tuyệt đối để lễ bái tôn kính mỗi ngày. Luật Nhân quả sẽ âm thầm tạo nên sức mạnh nội tâm cho ta, khiến ta giữ được bình tĩnh khi gặp nghịch cảnh. Ta tôn kính bậc thánh thì ta có được phẩm chất của thánh, đó là quy luật.</p>
+            </div>
+        </div>
+        
+        <p>Còn một phương pháp đặc biệt để giữ tâm bất động nữa đó là <span class="kw-love">tâm thương yêu tha thứ</span>. Người tu dưỡng ở cấp độ cao, phát triển tình thương yêu rộng lớn đến muôn loài, sẽ tự nhiên có sức mạnh nội tâm vĩ đại, thừa sức vượt qua các nghịch cảnh trên đời. Kẻ mưu hại hay xúc phạm ta cũng là những kẻ ta nguyện yêu thương, nên dễ dàng tha thứ. Ta chẳng giận hờn căm ghét gì ai cả. Chỉ có là ta phải nghiêm khắc để dạy dỗ, chứ không ghét bỏ.</p>
+        
+        <p>Người bình thản nhẫn nhịn được như thế là người có đức độ lớn, xóa được tội chướng quá khứ, xây được thiện phúc tương lai, làm tấm gương đạo đức cho mọi người học tập, ngay cả quỷ thần cũng phải cảm phục yêu mến.</p>
+    </div>
+
+</body>
+</html>

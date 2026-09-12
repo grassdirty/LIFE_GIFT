@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng Hợp 180 Bài Nền Tảng Đạo Đức</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Thiết lập nền cánh đồng xanh cho trang */
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Ảnh cánh đồng xanh bát ngát từ Unsplash */
+            background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2500&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Khung chứa tổng thể */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.85); /* Màu trắng bán trong suốt */
+            backdrop-filter: blur(12px); /* Hiệu ứng kính mờ */
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32; /* Màu xanh lá đậm */
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Bộ đếm lượt xem */
+        .view-counter {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 6px 16px;
+            margin: -20px auto 30px;
+            padding: 10px 26px;
+            width: fit-content;
+            background: rgba(232, 245, 233, 0.92);
+            border: 1px solid #a5d6a7;
+            border-radius: 30px;
+            color: #2e7d32;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(46, 125, 50, 0.12);
+        }
+
+        .view-counter i {
+            color: #4caf50;
+            font-size: 1.15rem;
+        }
+
+        .view-counter b {
+            color: #1b5e20;
+            font-size: 1.15rem;
+        }
+
+        .view-counter .view-last {
+            color: #558b2f;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-left: 1px solid #a5d6a7;
+            padding-left: 16px;
+        }
+
+        /* Lưới hiển thị các link */
+        .grid-container {
+            display: grid;
+            /* Tự động chia cột, mỗi cột rộng tối thiểu 120px */
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 20px;
+        }
+
+        /* Thiết kế cho từng ô link */
+        .link-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 10px;
+            background: #ffffff;
+            border: 2px solid #a5d6a7; /* Viền xanh lá nhạt */
+            border-radius: 15px;
+            text-decoration: none;
+            color: #2e7d32;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Hiệu ứng khi di chuột vào ô link */
+        .link-item:hover {
+            transform: translateY(-5px); /* Nổi lên trên */
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2); /* Đổ bóng xanh */
+            background: #e8f5e9; /* Nền đổi sang xanh rất nhạt */
+            border-color: #4caf50;
+            color: #1b5e20;
+        }
+
+        /* Thiết kế icon */
+        .link-item i {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #4caf50;
+        }
+
+        .link-item:hover i {
+            color: #2e7d32;
+        }
+
+        /* Tên bài */
+        .link-item span {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #81c784; 
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4caf50; 
+        }
+
+        /* Responsive cho thiết bị di động */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 15px;
+            }
+            .link-item {
+                padding: 15px 10px;
+            }
+            .view-counter {
+                margin: -14px 0 24px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                border-radius: 20px;
+            }
+            .view-counter .view-last {
+                border-left: none;
+                padding-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tổng Hợp 180 Bài Nền Tảng Đạo Đức</h1>
+
+        <!-- BỘ ĐẾM LƯỢT XEM (Google Apps Script + Google Sheets) -->
+        <div class="view-counter">
+            <i class="fa-solid fa-eye"></i>
+            <span>Lượt xem: <b id="viewCount">0</b></span>
+            <span class="view-last" id="viewLast"></span>
+        </div>
+
+        <div class="grid-container" id="links-wrapper">
+            </div>
+    </div>
+
+    <script>
+        // Lấy thẻ div chứa lưới
+        const wrapper = document.getElementById('links-wrapper');
+        
+        // Vòng lặp từ 1 đến 180 để tạo HTML cho từng link
+        for (let i = 1; i <= 180; i++) {
+            // Tạo thẻ a
+            const linkTag = document.createElement('a');
+            linkTag.href = `index${i}.html`;
+            linkTag.className = 'link-item';
+            
+            // Gắn icon và text vào thẻ a
+            linkTag.innerHTML = `
+                <i class="fa-solid fa-seedling"></i>
+                <span>Bài ${i}</span>
+            `;
+            
+            // Đưa thẻ a vào trong khung chứa
+            wrapper.appendChild(linkTag);
+        }
+
+        // ============================================================
+        //  BỘ ĐẾM LƯỢT TRUY CẬP TOÀN CỤC — Google Apps Script + Sheets
+        //  - Hiển thị thông minh: K = hàng nghìn, M = hàng triệu
+        //    vd: 1250 → "1,25K" • 143454 → "143,454K" • 1234567 → "1,234567M"
+        //  - Nếu APPS_SCRIPT_URL không gọi được → tự chuyển về localStorage
+        //  - Hướng dẫn cài đặt: xem file INSTRUCTIONS_APPS_SCRIPT.md
+        // ============================================================
+        // 👉 Dán URL web-app của bạn vào đây (tạo theo INSTRUCTIONS_APPS_SCRIPT.md):
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVasAXZWBkKQSfJ8GPsw26gnT-Um1per-sp1F9cP4iGhR_hG_7ESb6x_GW8Isw4y_r/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
+
+        (function () {
+            const KEY = 'ntdd_blog_visits';
+            const elTotal = document.getElementById('viewCount');
+            const elLast  = document.getElementById('viewLast');
+
+            // Chuyển số → định dạng thông minh (K / M), dấu phẩy = ","
+            function smartNumber(n) {
+                n = Number(n) || 0;
+                if (n >= 1000000) return String(n / 1000000).replace('.', ',') + 'M';
+                if (n >= 1000)    return String(n / 1000).replace('.', ',') + 'K';
+                return String(n);
+            }
+
+            function show(data) {
+                if (elTotal) elTotal.textContent = smartNumber(data.total || 0);
+                if (elLast && data.lastVisit) elLast.textContent = 'Lần truy cập gần nhất: ' + data.lastVisit;
+            }
+
+            // ---- Chế độ TOÀN CỤC: gọi Google Apps Script ----
+            async function countGlobal() {
+                if (!APPS_SCRIPT_URL) return false;
+                try {
+                    const res = await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: 'action=increment'
+                    });
+                    if (!res.ok) return false;
+                    const data = await res.json();
+                    if (data && data.ok) {
+                        show({ total: data.total, lastVisit: data.lastVisit });
+                        return true;
+                    }
+                    return false;
+                } catch (e) {
+                    return false; // không gọi được -> dùng localStorage
+                }
+            }
+
+            // ---- Chế độ CỤC BỘ (dự phòng, không cần internet) ----
+            function countLocal() {
+                let data = { total: 0, lastVisit: '' };
+                try {
+                    const saved = JSON.parse(localStorage.getItem(KEY));
+                    if (saved && typeof saved === 'object') data = Object.assign(data, saved);
+                } catch (e) { /* bỏ qua */ }
+
+                data.total = (data.total || 0) + 1;
+                data.lastVisit = new Date().toLocaleString('vi-VN');
+
+                try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) { /* bỏ qua */ }
+                show(data);
+            }
+
+            countGlobal().then(ok => { if (!ok) countLocal(); });
+        })();
+    </script>
+
+</body>
+</html>

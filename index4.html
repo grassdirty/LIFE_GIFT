@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức - Vị Tha</title>
+    <style>
+        /* Thiết lập nền vũ trụ (Góc nhìn Trái Đất từ không gian) */
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Ảnh vũ trụ tuyệt đẹp từ Unsplash */
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2500&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Khung chứa nội dung mờ ảo */
+        .container {
+            background-color: rgba(12, 18, 28, 0.85); /* Nền tối xanh biển sâu */
+            backdrop-filter: blur(12px); /* Hiệu ứng kính mờ */
+            max-width: 850px;
+            padding: 45px 55px;
+            margin: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 2.4rem;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            color: #4fc3f7; /* Xanh lơ trong trẻo */
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 35px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Highlight từ khóa */
+        .hl-vitha {
+            color: #81c784; /* Xanh lá: Vị tha, Vì người */
+            font-weight: bold;
+        }
+
+        .hl-viky {
+            color: #e57373; /* Đỏ nhạt: Vị kỷ, Vì mình */
+            font-weight: bold;
+        }
+
+        /* Khung chứa các ví dụ về lòng vị tha */
+        .examples-list {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px 25px;
+            border-left: 4px solid #81c784;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+        }
+
+        .examples-list p {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .examples-list p::before {
+            content: "•";
+            color: #81c784;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .examples-list p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Hiệu ứng thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.5); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(79, 195, 247, 0.5); 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(79, 195, 247, 0.8); 
+        }
+
+        /* Responsive cho thiết bị di động */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                font-size: 1.05rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .examples-list {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ĐẠO ĐỨC (số 4)</h1>
+        <h2>Vị Tha</h2>
+        
+        <p>Đạo đức cũng có một thước đo khác, đó là Khuynh hướng <span class="hl-viky">Vì mình</span> hay <span class="hl-vitha">Vì người</span>. Nếu ta sống Vì mình nhiều quá, ta là người kém đạo đức. Nếu ta sống Vì người rất nhiều, ta là người có đạo đức.</p>
+        
+        <p>Tuy nhiên, <span class="hl-viky">Vị kỷ</span> là một bản năng tự nhiên của muôn loài. Ai cũng chỉ muốn làm cái gì có lợi cho mình trước. Ta lo cho mình ăn no, mặc ấm trước, rồi mới nghĩ đến người khác sau. Nếu để tự nhiên không giáo dục, bản năng vị kỷ tự động điều khiển hành vi ý nghĩ của ta thành một lối sống kém đạo đức. Chỉ khi có giáo dục, chỉ khi có sự thức tỉnh của trí tuệ, ta mới chống lại khuynh hướng Vị kỷ để biết sống <span class="hl-vitha">Vị tha</span>.</p>
+        
+        <div class="examples-list">
+            <p>Người cha giả vờ nhâm nhi cốc rượu nói chuyện đủ thứ để chờ các con mình ăn no còn thừa lại gì ông mới ăn sau.</p>
+            <p>Số tiền dành dụm định mua chiếc xe máy mới nhưng thôi đành lấy ra giúp đỡ hàng xóm lâm cảnh tai ương hoạn nạn.</p>
+            <p>Đã hết giờ làm việc, đã đến giờ dự tiệc, nhưng tội nghiệp ông già đã chờ nãy giờ, nên ta đành nán lại rất lâu giải quyết hồ sơ cho ông để ông khỏi phải trở lại hôm sau.</p>
+            <p>Mới cắn được một miếng mà thấy con chó gầy nhìn chăm chăm khúc bánh mì, biết nó đói lắm, thôi thả hết cho nó ăn.</p>
+            <p>Ba lần gặp liên tiếp mà anh bạn chỉ mặc đúng một chiếc áo đó, thôi lấy chiếc áo mới mua trong túi xách ra tặng luôn.</p>
+            <p>Năm nay thi tốt nghiệp mà đứa bạn vẫn chưa giải được các bài toán khó này, thôi dành thời gian kèm cho nó một tháng xem sao...</p>
+        </div>
+        
+        <p>Ban đầu, thay đổi từ lối sống <span class="hl-viky">Vì mình</span> sang <span class="hl-vitha">Vì người</span> rất khó khăn. Đến khi lối sống Vì người đã trở thành thói quen tự nhiên thì phát hiện rằng hạnh phúc chính là đây. Lối sống Vị kỷ cho ta cảm giác khoái chí tầm thường. Còn lối sống Vị tha cho ta niềm hạnh phúc thanh cao. Ta tôn xưng một người là thánh nhân cũng chỉ vì người đó có lối sống cực kì vị tha. Các tôn giáo có phong thánh cho ai cũng phải lấy cuộc sống vị tha của vị đó làm tiêu chuẩn.</p>
+        
+        <p>Sinh ra trên đời, ta có quyền được thụ hưởng một số quyền lợi, được thụ hưởng một số niềm vui. Nhưng nếu ta là người có đạo đức, ta sẽ thích cống hiến nhiều hơn thụ hưởng, ta thích làm việc phục vụ nhiều hơn tiêu dùng sử dụng.</p>
+        
+        <p>Tuy nhiên, việc quyết liệt từ chối mọi sự thụ hưởng cũng là cực đoan. Ta sẽ không làm việc được nếu ăn không đủ no. Ta sẽ không bố thí được nếu chẳng có chút tiền nào.</p>
+        
+        <p>Vì thế, nếu <span class="hl-viky">Vì mình</span> để có thể <span class="hl-vitha">Vì người</span> thì vẫn là đạo đức. Còn Vì mình rồi thôi thì là không đạo đức. Người cha phải ăn no để đi cày ruộng làm lúa nuôi gia đình. Doanh nhân gắng hà tiện từng đồng để doanh nghiệp tồn tại cho nhân viên có việc làm ổn định. Nhà nước phải kiểm tra việc đóng thuế gắt gao để có ngân sách trả lương cho công chức. Lãnh đạo cấp cao phải ngồi xe bọc thép để còn sống mà chỉ đạo quốc gia. Cơ trưởng đành bỏ mặc phi công phụ ngất xỉu để tập trung điều khiển máy bay tìm chỗ hạ cánh an toàn.</p>
+        
+        <p>Những biểu hiện giống như Vì mình nhưng thật sự là <span class="hl-vitha">Vì người</span>, vẫn là đạo đức.</p>
+        
+        <p>Muốn thành hình được khuynh hướng Vị tha cao quý, chúng ta phải yêu kính ngưỡng mộ các bậc thánh vị tha. Chúng ta cũng phải tự tâm nguyện sẽ sống vị tha. Chúng ta khéo khuyên mọi người cùng sống vị tha. Đừng chê trách kẻ sống vị kỷ, chỉ gắng tìm cách khuyên bảo thôi.</p>
+    </div>
+
+</body>
+</html>

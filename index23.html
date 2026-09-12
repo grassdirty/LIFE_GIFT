@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo Đức (Số 23) - Tận Tụy</title>
+    <style>
+        /* Thiết lập nền Đất Mẹ tĩnh tại và bền bỉ */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: radial-gradient(circle at 50% 100%, #3e1f12 0%, #1c0d08 50%, #0a0402 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ánh sáng bình minh nhạt ngầm tỏa từ dưới lên (sự hy vọng từ công việc) */
+        body::before {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150vw;
+            height: 100vh;
+            z-index: -2;
+            background: radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            animation: slowGlow 10s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt công đức (Merit Particles) bay lên đều đặn tượng trưng cho sự tận tụy tích phước */
+        .merit-particles {
+            position: fixed;
+            bottom: -10vh;
+            left: 0;
+            width: 100%;
+            height: 120vh;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 15% 90%, #d4af37, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 30% 70%, rgba(212, 175, 55, 0.6), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 60% 85%, #f5deb3, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 85% 60%, rgba(255,255,255,0.5), rgba(0,0,0,0)),
+                radial-gradient(2.5px 2.5px at 45% 40%, #e6a817, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 75% 25%, #d4af37, rgba(0,0,0,0));
+            background-size: 100vw 100vh;
+            animation: particlesRise 25s linear infinite;
+        }
+
+        @keyframes slowGlow {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes particlesRise {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Khung nội dung Glassmorphism Cổ Điển & Chắc chắn */
+        .container {
+            background: rgba(18, 9, 6, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9),
+                        0 0 40px rgba(212, 175, 55, 0.04) inset;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 35px 85px rgba(0, 0, 0, 0.95),
+                        0 0 60px rgba(212, 175, 55, 0.08) inset;
+        }
+
+        /* Thiết kế Tiêu đề */
+        h1 {
+            text-align: center;
+            color: #d4af37; /* Vàng đồng cổ điển (Antique Gold) */
+            font-size: 2.3em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            line-height: 1.4;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #d7ccc8;
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Định dạng đoạn văn */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Khối Câu Châm Ngôn / Quan điểm đạo đức cốt lõi */
+        .core-quote-box {
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.01) 100%);
+            border-left: 4px solid #d4af37;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 16px 16px 0;
+            box-shadow: 2px 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .core-quote-box p {
+            margin: 0;
+            color: #f5deb3; /* Vàng lúa mì thanh tao */
+            font-size: 1.2em;
+            font-weight: 600;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Khối "Làm Thiện Nguyện" (Tận tụy vô điều kiện) */
+        .volunteer-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .volunteer-box::before {
+            content: "🌱 LÀM PHƯỚC KHI CHƯA CÓ VIỆC";
+            position: absolute;
+            top: -14px;
+            left: 25px;
+            background: #120906;
+            color: #e6a817;
+            padding: 2px 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            border-radius: 6px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .volunteer-box p {
+            margin-bottom: 0;
+            color: #d7ccc8;
+        }
+
+        /* Các từ khóa highlight */
+        .kw-dedication {
+            color: #e6a817; /* Vàng nghệ - Sự tận tụy, chịu thương chịu khó */
+            font-weight: 600;
+        }
+
+        .kw-merit {
+            color: #d4af37; /* Vàng đồng - Phước báu, Đạo đức */
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.25);
+        }
+
+        .kw-warning {
+            color: #ff8a65; /* Cam nhạt - Cảnh báo sự xao nhãng */
+            font-weight: 550;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container { padding: 35px 20px; border-radius: 18px; }
+            h1 { font-size: 1.8em; letter-spacing: 1.5px; }
+            p { font-size: 1.05em; line-height: 1.75; }
+            .core-quote-box { padding: 18px; }
+            .core-quote-box p { font-size: 1.1em; }
+            .volunteer-box { padding: 25px 18px 18px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp hạt sáng bay lên từ đất (công đức sinh ra từ sự tận tụy) -->
+    <div class="merit-particles"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 23)</span>
+            TẬN TỤY
+        </h1>
+        
+        <p>Có người nhiều phước, được tự do chọn lựa nghề nghiệp công việc theo ý thích. Có rất nhiều người kém phước, không có nhiều chọn lựa ngành nghề công việc, có được việc làm là mừng lắm rồi. Nếu người này mà không yêu công việc của mình, cứ có tâm trông đợi tìm kiếm việc khác, khiến cho mình <span class="kw-warning">xao nhãng công việc hiện tại</span>, mà việc gì khác cũng chẳng đến, thế là mất cả chì lẫn chài.</p>
+        
+        <!-- Khối châm ngôn cốt lõi -->
+        <div class="core-quote-box">
+            <p>Quan điểm đạo đức ở đây là: Hãy yêu việc mình đang làm, đừng trông ngóng chờ đợi để được làm việc mình yêu.</p>
+        </div>
+        
+        <p>Người sẽ nói, tôi chỉ thích làm những việc thế này, không thích làm những việc thế kia, nếu cho tôi làm việc mà tôi thích thì tôi hạnh phúc hơn mà cũng làm có năng suất hơn. Còn ép tôi làm việc mà tôi chán ghét thì tôi buồn bực, mà cũng không làm được nhiều năng suất. Đúng vậy, ai cũng nói như vậy, nhưng không phải ai cũng có cơ hội may mắn để làm việc mình thích.</p>
+        
+        <p>Vấn đề là ta bị rơi vào hoàn cảnh phải làm những việc mình không thích. Hoàn cảnh như thế, ta không thoát ra được. Hoặc là ta phải làm một cách vui vẻ và có năng suất, hoặc là ta thất nghiệp, còn việc ta thích không có cơ hội đến với ta.</p>
+        
+        <p>Cái hay ở đây là dù không thích, ta phải thích, cho bằng được. <span class="kw-merit">Đạo đức là ở chỗ đó, trí tuệ là ở chỗ đó, bản lĩnh ý chí là ở chỗ đó.</span> Ta cứ nghĩ rằng, trời đất đã tặng cho ta công việc như thế, cuộc đời đã gửi cho ta công việc như thế, ta đều biết ơn, đều trân trọng, không dám xem thường. Cái tâm không dám xem thường bất cứ việc làm nào, đó là tâm đạo đức.</p>
+        
+        <p>Ta nghĩ, việc này ta không thích, nhưng có rất nhiều người khác thích mà không được. Ta phụ bạc công việc này là ta phủ nhận tâm tình của bao nhiêu người khác. Ta vẫn phải tôn trọng cái thích của người khác nữa. Việc tôn trọng ý thích của người khác cũng là đạo đức.</p>
+        
+        <p>Nếu trong việc hiện tại đang có mà ta cố gắng <span class="kw-dedication">tận tụy làm việc</span> để có nhiều năng suất, thì <span class="kw-merit">phước của ta sẽ tăng lên dần</span>. Phước tăng lên rồi thì có khi ta được thêm cơ hội chọn lựa nhiều việc khác nữa. Buộc được tâm mình phải yêu công việc mình đang làm là một đạo đức.</p>
+        
+        <p>Ông bà mình một hạt cơm rơi còn nhặt lên không cho phí phạm, thì cả một công ăn việc làm mà ta không yêu quý thì rất mang tội. Vì thế bất cứ công việc gì đến với ta, ta đều yêu quý tôn trọng, và rất <span class="kw-dedication">tận tụy làm việc cho cao năng suất</span>.</p>
+        
+        <!-- Khối công việc thiện nguyện vô điều kiện -->
+        <div class="volunteer-box">
+            <p>Thậm chí khi chưa có việc làm, ta còn phải làm phước bằng cách làm những việc chẳng ai làm như nhặt rác, lấp ổ gà, vớt rác trên kênh mương, thăm người già neo đơn, chăm sóc người bệnh giùm cho bạn bè, phụ hồ xây nhà trong xóm, tất cả đều làm không có lương. Những việc thiện nguyện đó không dễ làm, vậy mà ta còn vui vẻ hăng hái làm, thì khi đã có công ăn việc làm, ta sẽ rất tận tụy, không đứng núi này trông núi nọ.</p>
+        </div>
+        
+        <p style="text-align: center; font-size: 1.2em; color: #d4af37; font-weight: 600; margin-top: 30px;">
+            Buộc tâm ta phải yêu công việc mình làm, rồi hạnh phúc sẽ đến với ta.
+        </p>
+    </div>
+
+</body>
+</html>

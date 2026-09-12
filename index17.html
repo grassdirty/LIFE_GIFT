@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐẠO ĐỨC (Số 17) - Lý Tưởng Sống</title>
+    <style>
+        /* Thiết lập nền Đêm tối và Ngọn lửa (Dark & Fire) */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0202 0%, #240505 50%, #080101 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Vầng sáng (Aura) nhịp đập tựa như trái tim mang lý tưởng */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150vw;
+            height: 150vh;
+            z-index: -2;
+            background: radial-gradient(circle, rgba(255, 87, 34, 0.08) 0%, rgba(220, 20, 60, 0.03) 40%, transparent 70%);
+            animation: heartbeat 6s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        /* Hạt tàn lửa (Embers/Sparks) bay lên biểu trưng cho nhiệt huyết */
+        .embers {
+            position: fixed;
+            bottom: -10vh;
+            left: 0;
+            width: 100%;
+            height: 120vh;
+            z-index: -1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 15% 90%, #ff8a65, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 30% 70%, #ffcc80, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 60% 85%, #ff5722, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 85% 60%, #ffd54f, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 45% 40%, #ff7043, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 75% 25%, #ffb74d, rgba(0,0,0,0));
+            background-size: 100vw 100vh;
+            animation: sparksRise 15s linear infinite;
+        }
+
+        /* Hiệu ứng mây lửa chuyển động chậm */
+        .embers::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20% 80%, #ffab91, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 80% 50%, #ffcc80, rgba(0,0,0,0));
+            background-size: 80vw 80vh;
+            animation: sparksRise 20s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+        }
+
+        @keyframes sparksRise {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        /* Khung nội dung Glassmorphism */
+        .container {
+            background: rgba(20, 6, 6, 0.85);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            /* Viền đỏ cam mờ */
+            border: 1px solid rgba(255, 112, 67, 0.25);
+            border-radius: 24px;
+            padding: 55px 45px;
+            max-width: 820px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9),
+                        0 0 50px rgba(255, 87, 34, 0.05) inset;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 112, 67, 0.45);
+            box-shadow: 0 35px 85px rgba(0, 0, 0, 0.95),
+                        0 0 70px rgba(255, 87, 34, 0.08) inset;
+        }
+
+        /* Tiêu đề */
+        h1 {
+            text-align: center;
+            color: #ffb74d; /* Màu cam sáng */
+            font-size: 2.4em;
+            margin-top: 0;
+            margin-bottom: 35px;
+            letter-spacing: 2.5px;
+            text-shadow: 0 0 20px rgba(255, 183, 77, 0.4);
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            font-size: 0.55em;
+            color: #ffab91;
+            letter-spacing: 2px;
+            text-shadow: none;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+        /* Đoạn văn */
+        p {
+            font-size: 1.15em;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #e2e8f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Highlights */
+        .highlight-fire {
+            color: #ff7043; /* Đỏ cam rực cháy */
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 112, 67, 0.3);
+        }
+
+        .highlight-gold {
+            color: #ffd54f; /* Vàng lý tưởng */
+            font-weight: 600;
+        }
+
+        /* Khối So sánh Lý Tưởng và Tham Vọng */
+        .contrast-box {
+            background: linear-gradient(135deg, rgba(255, 183, 77, 0.08) 0%, rgba(220, 20, 60, 0.05) 100%);
+            border: 1px solid rgba(255, 183, 77, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .contrast-box p {
+            margin-bottom: 15px;
+        }
+        
+        .contrast-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .word-ideal {
+            color: #ffd54f; /* Màu rực rỡ, thanh cao */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .word-ambition {
+            color: #ef5350; /* Màu đỏ máu, hủy diệt */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 600px) {
+            body { padding: 15px; }
+            .container {
+                padding: 35px 20px;
+                border-radius: 18px;
+            }
+            h1 { font-size: 1.9em; letter-spacing: 1.5px; }
+            p { font-size: 1.05em; line-height: 1.75; }
+            .contrast-box { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lớp hạt tàn lửa bay lên -->
+    <div class="embers"></div>
+
+    <div class="container">
+        <h1>
+            <span>ĐẠO ĐỨC (số 17)</span>
+            LÝ TƯỞNG SỐNG
+        </h1>
+        
+        <p>Có nhiều người sống không có mục đích gì, tới đâu tính tới đó. Có những người sống có mục đích, nhưng là các mục đích bình thường hay tầm thường, chỉ nghĩ đến quyền lợi hạnh phúc của mình. Và có một số người, chiếm tỉ lệ nhỏ hơn, sống với mục tiêu cao đẹp. Những người có mục tiêu cao đẹp sống để phụng sự, sống để cống hiến, sống để đem hạnh phúc cho mọi người, ta gọi họ là <span class="highlight-gold">người có lý tưởng</span>.</p>
+        
+        <p>Lý tưởng của những người đó sẽ giống nhau về cơ bản như nỗ lực rất nhiều, phấn đấu rất nhiều, để đem lại điều lợi ích cho cuộc đời. Nhưng mỗi người sẽ khác nhau về chi tiết cụ thể. Có người chọn phấn đấu vào ngành y để chữa bệnh cho người nghèo (nghĩa là chấp nhận làm y bác sĩ nghèo). Có người chọn ngành bảo vệ các giống loài hoang dã để giữ gìn đa dạng sinh học cho Trái đất. Có người chọn nông nghiệp vì muốn tìm cách tăng nguồn lương thực cho con người. Có người chọn ngành báo chí vì muốn dùng ngòi bút ca ngợi nhân rộng điều hay và chống lại điều xấu. Có người chọn đời sống tu sĩ vì hy vọng đời sống giới luật sẽ thuận lợi cho hoạt động từ thiện xã hội hơn. Có người chọn con đường quan chức vì thấy phương châm của đảng chỉ là hy sinh phụng sự rất cao đẹp....</p>
+        
+        <p>Chưa cần biết có thực tế hay không, nhưng người có lý tưởng là có được <span class="highlight-fire">ngọn lửa trong tim</span>, có động lực để phấn đấu, học tập, tu dưỡng. Cái lý tưởng đó sẽ thúc đẩy ta học tập rèn luyện chứ không cho phép ta lười nhác. Cái lý tưởng đó sẽ thúc đẩy ta tu dưỡng lại đạo đức bản thân chứ không cho phép ta sống hưởng thụ ích kỷ. Cái gì không phù hợp với lý tưởng sẽ bị lý tưởng loại bỏ.</p>
+        
+        <p>Trừ khi lý tưởng ta yếu quá, mà tật xấu thì mạnh quá, thì cái tật xấu đó sẽ giết chết lý tưởng. Ví dụ người có lý tưởng yêu nước, nhưng lại có tật mê nữ sắc. Ban đầu phấn đấu phụng sự quê hương rất tốt, nhưng sau vì bị gài mỹ nhân kế nên bị giặc khống chế ép phải làm những điều phản bội quê hương. Hoặc có người có lý tưởng phục vụ dân sinh, mưu tìm công ăn việc làm cho các bạn trẻ mới ra trường, nhưng người này lại có tật nóng tính quá. Sau này vì nóng tính tự ái mà dẹp bỏ tất cả không chịu làm gì nữa, bỏ hết cả hệ thống đang hoạt động kết nối khắp nơi lùng tìm việc làm với các bạn.</p>
+        
+        <p>Nếu người có lý tưởng mạnh, đủ mạnh, thì lý tưởng đó sẽ <span class="highlight-gold">chữa lành sự khiếm khuyết của tâm hồn</span>, phát triển nhiều khả năng, khiến cho cuộc sống của người đó rất đẹp đẽ ý nghĩa.</p>
+        
+        <p>Muốn có lý tưởng sống thì ban đầu ta phải thường hay đọc truyện về cuộc đời và công nghiệp của các danh nhân, trong tâm khởi lên được niềm ngưỡng mộ yêu kính thật sự. Lòng yêu kính ngưỡng mộ càng có nhiều thì đến lúc nào lý tưởng sẽ xuất hiện mạnh mẽ nơi chính tâm hồn ta.</p>
+        
+        <!-- Hộp nhấn mạnh sự đối lập giữa Lý tưởng và Tham vọng -->
+        <div class="contrast-box">
+            <p>Ta cũng đừng nhầm giữa <span class="word-ideal">Lý tưởng</span> và <span class="word-ambition">Tham vọng</span>. Lý tưởng và tham vọng đều gặp nhau ở chí lớn, mong làm được việc lớn, hy vọng gây ảnh hưởng đến nhiều người. Nhưng lý tưởng thì có nghĩa là <strong>quên mình để đem lợi ích cho tha nhân</strong>, còn tham vọng thì có nghĩa là <strong>mưu tìm vinh quang cho mình</strong>.</p>
+            
+            <p>Lý tưởng khiến cho tâm hồn ta trở nên cao thượng dần như một bậc thánh. Tham vọng tàn phá tâm hồn khiến ta trở thành ác quỷ.</p>
+        </div>
+        
+    </div>
+
+</body>
+</html>
