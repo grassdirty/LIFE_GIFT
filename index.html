@@ -233,7 +233,7 @@
         //  - Hướng dẫn cài đặt: xem file INSTRUCTIONS_APPS_SCRIPT.md
         // ============================================================
         // 👉 Dán URL web-app của bạn vào đây (xem INSTRUCTIONS_APPS_SCRIPT.md):
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4EvdN4api7nIfsQQ22tc-RroANudEttF6UdsVp8ieedSdbDqnsQiWt4UVjceTx_j8/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx8ccINjbEdClXnY671PhMxjJDcTUF0Ws4vaL_4sMMpM9D9jXr4cLsogdokjYKwoMIC/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
 
         (function () {
             const KEY = 'ntdd_blog_visits';
@@ -286,13 +286,13 @@
                     }
                     const isHtml = /<\s*(!doctype|html)/i.test(text.slice(0, 200));
                     if (isHtml) {
-                        console.warn('[counter] ⚠️ Google trả về trang HTML yêu cầu quyền — deployment chưa đặt "Ai có quyền truy cập: Bất kỳ ai (Anyone)". Xem INSTRUCTIONS_APPS_SCRIPT.md — CÁCH A.');
+                        console.warn('[counter] ⚠️ Google trả về trang HTML (yêu cầu quyền HOẶC lỗi script ở Apps Script đang xảy ra). Hãy dán URL + "?action=read" vào cửa sổ ẩn danh để xem chi tiết — xem INSTRUCTIONS_APPS_SCRIPT.md.');
                     } else {
                         console.warn('[counter] ⚠️ Apps Script trả về dữ liệu không đúng:', data || text.slice(0, 300));
                     }
                     return false;
                 } catch (e) {
-                    console.warn('[counter] ⚠️ Khōng gọi được Apps Script:', e);
+                    console.warn('[counter] ⚠️ Không gọi được Apps Script (' + e + ') — thường do deployment chưa đặt "Ai có quyền truy cập: Bất kỳ ai (Anyone)" (CORS bị chặn) hoặc đang mở file local (file://). Hãy dán URL vào cửa sổ ẩn danh để kiểm tra — xem INSTRUCTIONS_APPS_SCRIPT.md mục Kiểm tra.');
                     return false; // không gọi được -> dùng localStorage
                 }
             }

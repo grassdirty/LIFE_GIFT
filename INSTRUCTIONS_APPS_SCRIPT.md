@@ -117,6 +117,8 @@ gồm `Tổng lượt xem | Hôm nay | Ngày | Lần truy cập gần nhất`, s
 
 | Hiện tượng | Nguyên nhân | Cách xử lý |
 |---|---|---|
+| Browser báo **"Failed to fetch"** | Deployment trong `index.html` **chưa** public: Google trả trang yêu cầu quyền (HTML không có CORS) nên trình duyệt chặn → báo Failed to fetch | Dán URL vào cửa sổ ẩn danh theo mục Kiểm tra 1. Chưa ra JSON → tạo **deployment MỚI** với **Bất kỳ ai** rồi thay URL mới vào `index.html` (xem CÁCH B bước 4–6) |
+| Gọi URL thấy báo **"Exception: Tham số (String) không khớp... `ContentService.TextOutput.setMimeType` (dòng 121)"** | Code Apps Script cũ dùng chuỗi `'application/json'` — runtime **V8** không chấp nhận | Dán lại toàn bộ file **`AppsScript_Code.gs`** mới nhất (đã sửa dùng `ContentService.MimeType.JSON`) → Deploy → Manage deployments → Edit → **New version** → Deploy → mới test lại |
 | Luôn hiện "📴 Cục bộ", Sheets không có tab `Counter` | Deployment để "Chỉ mình tôi" hoặc chưa bấm "Cho phép" | Làm lại CÁCH A bước 5–7 (chọn **Bất kỳ ai** + bấm **Allow**) |
 | Console báo "Script không liên kết với spreadsheet" | Tạo script qua `script.new` (đứng lẻ) | Tạo lại từ Google Sheets → Extensions → Apps Script |
 | Sửa `.gs` xong mà web vẫn chạy code cũ | Google cache deployment cũ | Deploy → Manage deployments → Edit → chọn **New version** (hoặc thêm `?v=2` vào URL) |

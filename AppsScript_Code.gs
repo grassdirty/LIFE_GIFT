@@ -117,6 +117,9 @@ function fmt_(d, tz, pattern) {
 }
 
 function out_(obj) {
+  // ⚠️ LƯU Ý runtime V8: phải truyền enum ContentService.MimeType.JSON,
+  // KHÔNG được truyền chuỗi 'application/json' (sẽ báo lỗi
+  // "Tham số (String) không khớp... ContentService.TextOutput.setMimeType" ở dòng này).
   return ContentService.createTextOutput(JSON.stringify(obj))
-    .setMimeType('application/json');
+    .setMimeType(ContentService.MimeType.JSON);
 }
