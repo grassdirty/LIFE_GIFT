@@ -228,12 +228,12 @@
         //  BỘ ĐẾM LƯỢT TRUY CẬP TOÀN CỤC — Google Apps Script + Sheets
         //  - Hiển thị thông minh: K = hàng nghìn, M = hàng triệu
         //    vd: 1250 → "1,25K" • 143454 → "143,454K" • 1234567 → "1,234567M"
-        //  - Bilan ✅ -> індикатор «🌐 Toàn cục»; thất bача -> localStorage «📴 Cục bộ»
-        //  - Kiểm char причини: F12 -> Console (рядки [counter]...)
-        //  - Hướng дованie cài đặt: xem file INSTRUCTIONS_APPS_SCRIPT.md
+        //  - Bilan ✅ -> індикатор «🌐 Toàn cục»; thất bại -> localStorage «📴 Cục bộ»
+        //  - Kiểm tra nguyên nhân: F12 -> Console (dòng [counter]...)
+        //  - Hướng dẫn cài đặt: xem file INSTRUCTIONS_APPS_SCRIPT.md
         // ============================================================
-        // 👉 Dán URL web-app của вас vào đây (xem INSTRUCTIONS_APPS_SCRIPT.md):
-        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVasAXZWBkKQSfJ8GPsw26gnT-Um1per-sp1F9cP4iGhR_hG_7ESb6x_GW8Isw4y_r/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
+        // 👉 Dán URL web-app của bạn vào đây (xem INSTRUCTIONS_APPS_SCRIPT.md):
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4EvdN4api7nIfsQQ22tc-RroANudEttF6UdsVp8ieedSdbDqnsQiWt4UVjceTx_j8/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
 
         (function () {
             const KEY = 'ntdd_blog_visits';
@@ -251,14 +251,14 @@
 
             function show(data, mode) {
                 if (elTotal) elTotal.textContent = smartNumber(data.total || 0);
-                if (elLast)  elLast.textContent = data.lastVisit ? ('Lần truy cáp gần nhíst: ' + data.lastVisit) : '';
+                if (elLast)  elLast.textContent = data.lastVisit ? ('Lần truy cập gần nhất: ' + data.lastVisit) : '';
                 if (elMode) {
                     if (mode === 'global') {
                         elMode.textContent = '🌐 Toàn cục';
                         elMode.title = 'Đếm toàn cục (Google Sheets)';
                     } else {
                         elMode.textContent = '📴 Cục bộ';
-                        elMode.title = 'localStorage — toàn cục chư liên. F12 Console -> [counter]';
+                        elMode.title = 'localStorage — toàn cục chưa liên kết. F12 Console -> [counter]';
                     }
                 }
             }
@@ -276,15 +276,20 @@
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                         body: 'action=increment'
                     });
-                    const text = await res.text();          // може прийти JSON або HTML (авторизація)
+                    const text = await res.text(); // có thể là JSON hoặc HTML (Google trả trang yêu cầu quyền)
                     let data = null;
-                    try { data = JSON.parse(text); } catch (e) { /* HTML сторінка, а не JSON */ }
+                    try { data = JSON.parse(text); } catch (e) { /* HTML, không phải JSON */ }
                     if (data && data.ok) {
                         show({ total: data.total, lastVisit: data.lastVisit }, 'global');
                         console.log('[counter] ✅ TOÀN CỤC OK:', data);
                         return true;
                     }
-                    console.warn('[counter] ⚠️ Apps Script trả thất bача:', data || text.slice(0, 300));
+                    const isHtml = /<\s*(!doctype|html)/i.test(text.slice(0, 200));
+                    if (isHtml) {
+                        console.warn('[counter] ⚠️ Google trả về trang HTML yêu cầu quyền — deployment chưa đặt "Ai có quyền truy cập: Bất kỳ ai (Anyone)". Xem INSTRUCTIONS_APPS_SCRIPT.md — CÁCH A.');
+                    } else {
+                        console.warn('[counter] ⚠️ Apps Script trả về dữ liệu không đúng:', data || text.slice(0, 300));
+                    }
                     return false;
                 } catch (e) {
                     console.warn('[counter] ⚠️ Khōng gọi được Apps Script:', e);
