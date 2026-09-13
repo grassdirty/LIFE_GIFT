@@ -10,8 +10,13 @@
  * ============================================================
  */
 
-function doGet() {
-  return out_({ ok: false, error: 'Use POST with action=increment' });
+function doGet(e) {
+  // Kiểm char у browser: .../exec?action=read (читає A2, не рахує)
+  var p = (e && e.parameter) || {};
+  var action = String(p.action || '');
+  if (action === 'increment') return increment_();
+  if (action === 'read')      return out_({ ok: true, total: readTotal_() });
+  return out_({ ok: true, message: 'Use POST body: action=increment', total: readTotal_() });
 }
 
 function doPost(e) {
@@ -40,12 +45,16 @@ function doPost(e) {
  *   D2    — lần truy cập gần nhất
  */
 function increment_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = null;
+  try { ss = SpreadsheetApp.getActiveSpreadsheet(); } catch (e) { /* standalone script */ }
+  if (!ss) {
+    return out_({ ok: false, error: 'Script khōng liên vo spreadsheet. Mǫ Google Sheets -> Extensions -> Apps Script и встav cюдa весь код (не через script.new).' });
+  }
   var sh = ss.getSheetByName('Counter');
-  var tz = Session.getScriptTimeZone();
+  var tz = tz_();
   var now = new Date();
-  var todayStr = Utilities.formatDate(now, tz, 'yyyy-MM-dd');
-  var lastVisit = Utilities.formatDate(now, tz, 'HH:mm:ss dd/MM/yyyy');
+  var todayStr = fmt_(now, tz, 'yyyy-MM-dd');
+  var lastVisit = fmt_(now, tz, 'HH:mm:ss dd/MM/yyyy');
 
   if (!sh) {
     sh = ss.insertSheet('Counter');
@@ -68,6 +77,43 @@ function increment_() {
   sh.getRange('D2').setValue(lastVisit);
 
   return out_({ ok: true, total: total, todayCount: today, lastVisit: lastVisit });
+}
+
+/** Тom цenne А2 (для kiểm char у browser: ?action=read) */
+function readTotal_() {
+  try {
+    var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Counter');
+    return sh ? Number(sh.getRange('A2').getValue() || 0) : 0;
+  } catch (e) {
+    return -1;
+  }
+}
+
+/** Timezone зі spreadsheet (fallback — GMT) */
+function tz_() {
+  try { return SpreadsheetApp.getActiveSpreadsheet().getSpreadsheetTimeZone(); }
+  catch (e) { return 'GMT'; }
+}
+
+function pad_(n) { return (n < 10 ? '0' : '') + n; }
+
+/**
+ * Format дати. Пробуєм новий API Utilities.formatDate();
+ * коли недоступний або падає — fallback на UTC (працє на всіх runtime).
+ */
+function fmt_(d, tz, pattern) {
+  try {
+    if (typeof Utilities !== 'undefined' && typeof Utilities.formatDate === 'function') {
+      return Utilities.formatDate(d, tz, pattern);
+    }
+  } catch (e) { /* fallback */ }
+  return pattern
+    .split('yyyy').join(String(d.getUTCFullYear()))
+    .split('MM').join(pad_(d.getUTCMonth() + 1))
+    .split('dd').join(pad_(d.getUTCDate()))
+    .split('HH').join(pad_(d.getUTCHours()))
+    .split('mm').join(pad_(d.getUTCMinutes()))
+    .split('ss').join(pad_(d.getUTCSeconds()));
 }
 
 function out_(obj) {

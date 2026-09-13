@@ -79,6 +79,17 @@
             padding-left: 16px;
         }
 
+        /* Вказує режим лічильника: 🌐 Toàn cục / 📴 Cục bộ */
+        .view-counter .view-mode {
+            color: #2e7d32;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(46, 125, 50, 0.14);
+            padding: 2px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.3px;
+        }
+
         /* Lưới hiển thị các link */
         .grid-container {
             display: grid;
@@ -185,6 +196,7 @@
             <i class="fa-solid fa-eye"></i>
             <span>Lượt xem: <b id="viewCount">0</b></span>
             <span class="view-last" id="viewLast"></span>
+            <span class="view-mode" id="viewMode"></span>
         </div>
 
         <div class="grid-container" id="links-wrapper">
@@ -216,16 +228,18 @@
         //  BỘ ĐẾM LƯỢT TRUY CẬP TOÀN CỤC — Google Apps Script + Sheets
         //  - Hiển thị thông minh: K = hàng nghìn, M = hàng triệu
         //    vd: 1250 → "1,25K" • 143454 → "143,454K" • 1234567 → "1,234567M"
-        //  - Nếu APPS_SCRIPT_URL không gọi được → tự chuyển về localStorage
-        //  - Hướng dẫn cài đặt: xem file INSTRUCTIONS_APPS_SCRIPT.md
+        //  - Bilan ✅ -> індикатор «🌐 Toàn cục»; thất bача -> localStorage «📴 Cục bộ»
+        //  - Kiểm char причини: F12 -> Console (рядки [counter]...)
+        //  - Hướng дованie cài đặt: xem file INSTRUCTIONS_APPS_SCRIPT.md
         // ============================================================
-        // 👉 Dán URL web-app của bạn vào đây (tạo theo INSTRUCTIONS_APPS_SCRIPT.md):
+        // 👉 Dán URL web-app của вас vào đây (xem INSTRUCTIONS_APPS_SCRIPT.md):
         const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVasAXZWBkKQSfJ8GPsw26gnT-Um1per-sp1F9cP4iGhR_hG_7ESb6x_GW8Isw4y_r/exec'; // ex: https://script.google.com/macros/s/XXXX/exec
 
         (function () {
             const KEY = 'ntdd_blog_visits';
             const elTotal = document.getElementById('viewCount');
             const elLast  = document.getElementById('viewLast');
+            const elMode  = document.getElementById('viewMode');
 
             // Chuyển số → định dạng thông minh (K / M), dấu phẩy = ","
             function smartNumber(n) {
@@ -235,33 +249,50 @@
                 return String(n);
             }
 
-            function show(data) {
+            function show(data, mode) {
                 if (elTotal) elTotal.textContent = smartNumber(data.total || 0);
-                if (elLast && data.lastVisit) elLast.textContent = 'Lần truy cập gần nhất: ' + data.lastVisit;
+                if (elLast)  elLast.textContent = data.lastVisit ? ('Lần truy cáp gần nhíst: ' + data.lastVisit) : '';
+                if (elMode) {
+                    if (mode === 'global') {
+                        elMode.textContent = '🌐 Toàn cục';
+                        elMode.title = 'Đếm toàn cục (Google Sheets)';
+                    } else {
+                        elMode.textContent = '📴 Cục bộ';
+                        elMode.title = 'localStorage — toàn cục chư liên. F12 Console -> [counter]';
+                    }
+                }
             }
 
-            // ---- Chế độ TOÀN CỤC: gọi Google Apps Script ----
+            // ---- Chế mode TOÀN CỤC: gọi Google Apps Script ----
             async function countGlobal() {
-                if (!APPS_SCRIPT_URL) return false;
+                if (!APPS_SCRIPT_URL) {
+                    console.warn('[counter] APPS_SCRIPT_URL — rỗng, chuyển tự до Cục bộ.');
+                    return false;
+                }
                 try {
                     const res = await fetch(APPS_SCRIPT_URL, {
                         method: 'POST',
+                        cache: 'no-store',
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                         body: 'action=increment'
                     });
-                    if (!res.ok) return false;
-                    const data = await res.json();
+                    const text = await res.text();          // може прийти JSON або HTML (авторизація)
+                    let data = null;
+                    try { data = JSON.parse(text); } catch (e) { /* HTML сторінка, а не JSON */ }
                     if (data && data.ok) {
-                        show({ total: data.total, lastVisit: data.lastVisit });
+                        show({ total: data.total, lastVisit: data.lastVisit }, 'global');
+                        console.log('[counter] ✅ TOÀN CỤC OK:', data);
                         return true;
                     }
+                    console.warn('[counter] ⚠️ Apps Script trả thất bача:', data || text.slice(0, 300));
                     return false;
                 } catch (e) {
+                    console.warn('[counter] ⚠️ Khōng gọi được Apps Script:', e);
                     return false; // không gọi được -> dùng localStorage
                 }
             }
 
-            // ---- Chế độ CỤC BỘ (dự phòng, không cần internet) ----
+            // ---- Chế mode CỤC BỰ (дỳ фоng, không cần internet) ----
             function countLocal() {
                 let data = { total: 0, lastVisit: '' };
                 try {
@@ -273,7 +304,7 @@
                 data.lastVisit = new Date().toLocaleString('vi-VN');
 
                 try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) { /* bỏ qua */ }
-                show(data);
+                show(data, 'local');
             }
 
             countGlobal().then(ok => { if (!ok) countLocal(); });

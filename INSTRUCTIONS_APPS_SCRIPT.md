@@ -58,3 +58,37 @@ Trang `index.html` của thư mục **NTDD** đã được bổ sung phần code
   **「Triển khai」→「Quản lý lần triển khai」→ Edit** → chọn phiên bản
   **«Mới» (New version)** và cập nhật URL (hoặc thêm `?v=2` vào cuối URL)
   để tránh bị Google cache bản cũ.
+---
+
+## ✅ Kiểm char після cài đặt (3 kiểm)
+
+1. **Тест URL у browser** (вікно incognito — щоб нe було кешу):
+   відкрий адрес такого вигляду:
+   ```
+   https://script.google.com/macros/s/XXXX/exec?action=read
+   ```
+   - Kiedy deployment правил — page hiển shi JSON:
+     ```json
+     {"ok":true,"total":0}
+     ```
+   - Kiedy hiển shi HTML сторінку входу Google («Google sign-in required»)
+     → deployment не dla **Bất kỳ ai (Anyone)** або не xác nhàn **Allow**
+     → перероби Bước 4.
+2. **У `index.html`** індикатор біля лічильника повin be:
+   - **🌐 Toàn cục** = ok, лічильник працює через Google Sheets.
+   - **📴 Cục bộ** = toàn cục chư liên; F12 → Console скаже причину.
+3. **У Google Sheets** автоматично з'явиться tab **`Counter`** після
+   першого успішного заходу на trang (в той самий момент, коли
+   лічильник перейде у 🌐).
+
+---
+
+## 🔧 Troubleshooting — «чомy tílки localStorage?»
+
+| Симптом | Наиболее вероятная причина | Рішенie |
+|---|---|---|
+| Завжди «📴 Cục bộ», tab `Counter` нема | Deployment: Access = Only myself, або Allow не xác nhàn | Bước 4: Execute as = **Tôi (Me)**, Access = **Bất kỳ ai (Anyone)**, пройди **Allow** |
+| Console: «Script khōng liên vo spreadsheet» | Script створювали через script.new (standalone) | Пересоздай script через саму таблицю: Google Sheets → Extensions → Apps Script |
+| Обновил `.gs` — а сторінка все ще старая | Google кешує стару версію deployment | Deploy → Manage deployments → Edit → **New version**, або створи **новiй** deployment і встav **новий** URL (або додай `?v=2`) |
+| URL не закінчується на `/exec` | Скопирував не тоі адрес | Bước 5: copy адрес web app |
+| Хтось змінил Content-Type на `application/json` | Браузер шле CORS preflight — GAS відмовиться | Поверні назад `application/x-www-form-urlencoded` (code з папки — прави.) |
